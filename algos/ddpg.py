@@ -183,6 +183,7 @@ class DDPG(RLAlgorithm):
                             else:
                                 pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
 
+                    updates_until_next_sampling -= 1
                     if pool.size >= self.min_pool_size:
                         for update_itr in range(self.n_updates_per_sample):
                             # Train policy

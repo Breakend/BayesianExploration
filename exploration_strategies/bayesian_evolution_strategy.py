@@ -8,6 +8,14 @@ import numpy.random as nr
 from sampling_utils import rollout
 import tensorflow as tf
 
+def kl_div_p_q(p_mean, p_std, q_mean, q_std):
+    """KL divergence D_{KL}[p(x)||q(x)] for a fully factorized Gaussian"""
+    numerator = np.square(p_mean - q_mean) + \
+        np.square(p_std) - np.square(q_std)
+    denominator = 2 * np.square(q_std) + 1e-8
+    return np.sum(numerator / denominator + np.log(q_std) - np.log(p_std))
+
+
 class MCDropout(ExplorationStrategy, Serializable):
     """
     This strategy implements the Ornstein-Uhlenbeck process, which adds
@@ -58,7 +66,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         # import pdb; pdb.set_trace
         return current_policy_params + v
 
-    def generate_mutations(self, current_policy, num_mutations=4):
+    def generate_mutations(self, current_policy, num_mutations=6):
         policy_params = current_policy.get_param_values()
         mutants = []
         for i in range(num_mutations):
@@ -78,7 +86,7 @@ class MCDropout(ExplorationStrategy, Serializable):
 
         return rollout(env, cloned_policy, max_path_length)
 
-    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=20):
+    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=20, acquisiton_func = "kl"):
         if max_path_length is None:
             max_path_length = env.horizon
 
@@ -88,10 +96,16 @@ class MCDropout(ExplorationStrategy, Serializable):
 
         # generate your sampled parameter space
         mutants = self.generate_mutations(current_policy)
+        current_rollouts = []
+        current_policy_params = current_policy.get_param_values()
 
-        highest_variance_pair = None
+        for i in range(num_dropouts):
+            current_rollouts.append(self.get_rollout_with_dropout_mask(env, current_policy, current_policy_params, max_path_length, cloned_policy))
+        rewards = [np.sum(step[2]) for r in current_rollouts for step in r]
+        current_mean = np.mean(rewards)
+        current_var = np.var(rewards)
 
-        variances = []
+        stats = []
 
         for mutant in mutants:
             # print("Running mutant")
@@ -104,17 +118,19 @@ class MCDropout(ExplorationStrategy, Serializable):
             # import pdb; pdb.set_trace()
             rewards = [np.sum(step[2]) for r in rollouts for step in r]
             variance = np.var(rewards)
-            variances.append(variance)
             mean = np.mean(rewards)
-            # TODO: make this much more abstract, like keep it in a table of info and then run an acquisition over the info
-            if highest_variance_pair is None or highest_variance_pair[1] < variance:
-                highest_variance_pair = (mutant, variance)
-        print("----variances---")
-        print(variances)
-        print("----variances---")
+            stat = dict(mutant=mutant, bayesian_return_variance=variance, bayesian_returns_average=mean, kl=kl_div_p_q(current_mean, current_var, mean, variance)) 
+            print(stat)
+            stats.append(stat)
+
+        #TODO: extract to util funcs 
+        if acquisiton_func == "kl":
+            stat = max(stats, key=(lambda x: x["kl"]))
+            params = stat["mutant"]
+
         with tf.variable_scope("dropout_mask", reuse=not self.first_mask):
             cloned_policy = Serializable.clone(current_policy)
-            cloned_policy.set_param_values(highest_variance_pair[0])
+            cloned_policy.set_param_values(params)
         samples = []
         while len(samples) < batch_size:
             samples.extend(rollout(env, cloned_policy, max_path_length))

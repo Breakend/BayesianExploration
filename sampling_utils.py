@@ -6,7 +6,7 @@ def rollout(env, policy, max_path_length):
     path_return = 0
     samples = []
     observation = env.reset()
-    for i in range(max_path_length):
+    for i in range(max_path_length + 1):
         action, _ = policy.get_action(observation)
         next_observation, reward, terminal, _ = env.step(action)
         path_length += 1
