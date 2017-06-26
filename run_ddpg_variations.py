@@ -18,7 +18,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("type", help="Type of DDPG to run: ['unified-decaying', 'unified-gated-decaying', 'unified', 'unified-gated', 'regular']")
 parser.add_argument("env", help="The environment name from OpenAIGym environments")
-parser.add_argument("--num_epochs", default=100, type=int)
+parser.add_argument("--num_epochs", default=5000, type=int)
 parser.add_argument("--data_dir", default="./data/")
 parser.add_argument("--reward_scale", default=1.0, type=float)
 parser.add_argument("--use_ec2", action="store_true", help="Use your ec2 instances if configured")
@@ -47,7 +47,7 @@ policy = DeterministicMLPPolicy(
     env_spec=env.spec,
     name="policy",
     # The neural network policy should have two hidden layers, each with 32 hidden units.
-    hidden_sizes=(100, 50, 25),
+    hidden_sizes=(400,300),
     hidden_nonlinearity=tf.nn.relu,
 )
 
@@ -70,17 +70,16 @@ algo = ddpg_class(
     policy=policy,
     es=es,
     qf=qf,
-    batch_size=64,
+    batch_size=128,
     max_path_length=env.horizon,
     epoch_length=1000,
     min_pool_size=10000,
     n_epochs=args.num_epochs,
-    discount=0.99,
+    discount=0.995,
     scale_reward=args.reward_scale,
     qf_learning_rate=1e-3,
     policy_learning_rate=1e-4,
-    plot=False,
-    sigma_type=args.type
+    plot=False
 )
 
 
@@ -93,7 +92,7 @@ run_experiment_lite(
     snapshot_mode="last",
     # Specifies the seed for the experiment. If this is not provided, a random seed
     # will be used
-    exp_prefix="UnifiedDDPG_" + args.env + "_" + args.type,
+    exp_prefix="BayesianExploration_" + args.env + "_" + args.type,
     seed=1,
     mode="ec2" if args.use_ec2 else "local",
     plot=False,

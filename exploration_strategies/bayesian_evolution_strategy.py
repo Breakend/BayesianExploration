@@ -1,5 +1,6 @@
 from rllab.misc.overrides import overrides
 from rllab.misc.ext import AttrDict
+import rllab.misc.logger as logger
 from rllab.core.serializable import Serializable
 from rllab.spaces.box import Box
 from rllab.exploration_strategies.base import ExplorationStrategy
@@ -66,7 +67,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         # import pdb; pdb.set_trace
         return current_policy_params + v
 
-    def generate_mutations(self, current_policy, num_mutations=6):
+    def generate_mutations(self, current_policy, num_mutations=10):
         policy_params = current_policy.get_param_values()
         mutants = []
         for i in range(num_mutations):
@@ -75,7 +76,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         return mutants
 
     def generate_dropout_params(self, mutant_params):
-        mask = np.random.binomial(mutant_params.shape, 1.0-self.dropout_percent)[0] * (1.0/(1-self.dropout_percent))
+        mask = np.random.binomial(size=mutant_params.shape,n=1, p=1.0 - self.dropout_percent)
         return mutant_params * mask, mask
 
     def get_rollout_with_dropout_mask(self, env,  current_policy, mutant_params, max_path_length, cloned_policy):
@@ -106,6 +107,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         current_var = np.var(rewards)
 
         stats = []
+        print_stats = ["bayesian_return_variance", "bayesian_returns_average", "kl"]
 
         for mutant in mutants:
             # print("Running mutant")
@@ -119,8 +121,9 @@ class MCDropout(ExplorationStrategy, Serializable):
             rewards = [np.sum(step[2]) for r in rollouts for step in r]
             variance = np.var(rewards)
             mean = np.mean(rewards)
-            stat = dict(mutant=mutant, bayesian_return_variance=variance, bayesian_returns_average=mean, kl=kl_div_p_q(current_mean, current_var, mean, variance)) 
-            print(stat)
+            stat = dict(mutant=mutant, bayesian_return_variance=variance, bayesian_returns_average=mean, kl=kl_div_p_q(current_mean, current_var, mean, variance), rollouts=rollouts)
+            for s in print_stats:
+                logger.log(s + " : " + str(stat[s]))
             stats.append(stat)
 
         #TODO: extract to util funcs 
@@ -128,10 +131,11 @@ class MCDropout(ExplorationStrategy, Serializable):
             stat = max(stats, key=(lambda x: x["kl"]))
             params = stat["mutant"]
 
-        with tf.variable_scope("dropout_mask", reuse=not self.first_mask):
-            cloned_policy = Serializable.clone(current_policy)
-            cloned_policy.set_param_values(params)
-        samples = []
+        cloned_policy.set_param_values(params)
+
+        # Use the dropout rollouts
+        samples = [step for rollout in stat["rollouts"] for step in rollout]
+
         while len(samples) < batch_size:
             samples.extend(rollout(env, cloned_policy, max_path_length))
         return samples
