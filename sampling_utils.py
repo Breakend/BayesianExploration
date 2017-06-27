@@ -1,6 +1,7 @@
 import numpy as np
-import heapq 
+import heapq
 import rllab.misc.logger as logger
+from itertools import count
 
 def rollout(env, policy, max_path_length):
     path_length = 1
@@ -8,7 +9,7 @@ def rollout(env, policy, max_path_length):
     samples = []
     observation = env.reset()
     terminal = False
-    while not terminal and path_length <= max_path_length: 
+    while not terminal and path_length <= max_path_length:
         action, _ = policy.get_action(observation)
         next_observation, reward, terminal, _ = env.step(action)
         samples.append((observation, action, reward, terminal, path_length==1, path_length))
@@ -127,22 +128,28 @@ class FixedPriorityQueue(object):
     """
     Combined priority queue and set data structure.
     """
-    def __init__(self, items=[], max_size=100):
+    def __init__(self, key_size, items=[], max_size=100):
         """
         """
         assert type(max_size) is int
         assert len(items) <= max_size
-        self.heap = items 
+        self.heap = items
         heapq.heapify(self.heap)
         self.max_size = max_size
+        self.tiebreaker = count()
+        self.key_size = key_size + 1
 
     def pop_smallest(self):
         """Remove and return the smallest item from the queue."""
         smallest = heapq.heappop(self.heap)
         return smallest
 
-    def add(self, item):
+    def add(self, keys, item):
         """Add ``item`` to the queue if doesn't already exist."""
+        item = tuple(keys) + tuple((next(self.tiebreaker),)) + tuple(item)
         if len(self.heap) == self.max_size:
             self.pop_smallest()
         heapq.heappush(self.heap, item)
+
+    def get_items(self):
+        return [x[self.key_size:] for x in self.heap]

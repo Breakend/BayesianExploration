@@ -8,6 +8,7 @@ import numpy as np
 import numpy.random as nr
 from sampling_utils import rollout,FixedPriorityQueue
 import tensorflow as tf
+from itertools import count
 
 def kl_div_p_q(p_mean, p_std, q_mean, q_std):
     """KL divergence D_{KL}[p(x)||q(x)] for a fully factorized Gaussian"""
@@ -99,16 +100,16 @@ class MCDropout(ExplorationStrategy, Serializable):
 
         dropped_out_policies = []
         for i in range(num_dropouts):
-            params, mask = self.generate_dropout_params(current_policy.get_param_values()) 
+            params, mask = self.generate_dropout_params(current_policy.get_param_values())
             with tf.variable_scope("dropout_mask_%d" % i, reuse=(not self.first_mask.get(i, True))):
                 cloned_policy = Serializable.clone(current_policy)
                 self.first_mask[i] = False
                 cloned_policy.set_param_values(params)
                 dropped_out_policies.append(cloned_policy)
-            
+
         stats = []
         print_stats = ["bayesian_return_std", "bayesian_returns_average", "kl"]
-        samples_queue = FixedPriorityQueue(max_size = batch_size)
+        samples_queue = FixedPriorityQueue(key_size=2, max_size = batch_size)
         # run for 3 times the value and only keep the most uncertain actions
         viewed_samples = 0
         while viewed_samples < batch_size*4:
@@ -120,24 +121,22 @@ class MCDropout(ExplorationStrategy, Serializable):
                 actions = []
                 for cloned_policy in dropped_out_policies:
                     action, _ = cloned_policy.get_action(observation)
-                    actions.append(action) 
+                    actions.append(action)
                 mean_action = np.mean(actions)
                 std_action = float(np.mean(np.std(actions, axis=0)))
                 assert type(std_action) is float
                 next_observation, reward, terminal, _ = env.step(mean_action)
                 # The heapq sorts by the first element of the tuple, thus will keep the most uncertain actions
                 # we can also get the variance of the reward step by step
-                try:
-                    samples_queue.add((std_action, path_length, observation, mean_action, reward, terminal, path_length==1, path_length))
-                except:
-                    import pdb; pdb.set_trace()
+                keys = (std_action, reward)
+                samples_queue.add(keys, (observation, mean_action, reward, terminal, path_length==1, path_length))
                 viewed_samples += 1
                 observation = next_observation
                 path_length += 1
 
         print("Average sample action variance %f" % np.mean([x[0] for x in samples_queue.heap]))
 
-        return [x[2:] for x in samples_queue.heap]
+        return samples_queue.get_items()
 
 
     def get_action(self, t, observation, policy, **kwargs):
