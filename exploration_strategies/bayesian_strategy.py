@@ -10,12 +10,63 @@ from sampling_utils import rollout,FixedPriorityQueue
 import tensorflow as tf
 from itertools import count
 
+from scipy.special import gamma,psi
+from sklearn.neighbors import NearestNeighbors
+import pyprind
+
+from numpy import pi
+
+
 def kl_div_p_q(p_mean, p_std, q_mean, q_std):
     """KL divergence D_{KL}[p(x)||q(x)] for a fully factorized Gaussian"""
-    numerator = np.square(p_mean - q_mean) + \
-        np.square(p_std) - np.square(q_std)
+    numerator = np.square(p_mean - q_mean) + np.square(p_std) - np.square(q_std)
     denominator = 2 * np.square(q_std) + 1e-8
     return np.sum(numerator / denominator + np.log(q_std) - np.log(p_std))
+
+def nearest_distances(X, k=1):
+    '''
+    X = array(N,M)
+    N = number of points
+    M = number of dimensions
+    returns the distance to the kth nearest neighbor for every point in X
+    '''
+    knn = NearestNeighbors(n_neighbors=k)
+    knn.fit(X)
+    d, _ = knn.kneighbors(X) # the first nearest neighbor is itself
+    return d[:, -1] # returns the distance to the kth nearest neighbor
+
+# From https://gist.github.com/GaelVaroquaux/ead9898bd3c973c40429
+def entropy(X, k=5):
+    ''' Returns the entropy of the X.
+    Parameters
+    ===========
+    X : array-like, shape (n_samples, n_features)
+        The data the entropy of which is computed
+    k : int, optional
+        number of nearest neighbors for density estimation
+    Notes
+    ======
+    Kozachenko, L. F. & Leonenko, N. N. 1987 Sample estimate of entropy
+    of a random vector. Probl. Inf. Transm. 23, 95-101.
+    See also: Evans, D. 2008 A computationally efficient estimator for
+    mutual information, Proc. R. Soc. A 464 (2093), 1203-1215.
+    and:
+    Kraskov A, Stogbauer H, Grassberger P. (2004). Estimating mutual
+    information. Phys Rev E 69(6 Pt 2):066138.
+    '''
+
+    # Distance to kth nearest neighbor
+    r = nearest_distances(X, k) # squared distances
+    n, d = X.shape
+    volume_unit_ball = (pi**(.5*d)) / gamma(.5*d + 1)
+    '''
+    F. Perez-Cruz, (2008). Estimation of Information Theoretic Measures
+    for Continuous Random Variables. Advances in Neural Information
+    Processing Systems 21 (NIPS). Vancouver (Canada), December.
+    return d*mean(log(r))+log(volume_unit_ball)+log(n-1)-log(k)
+    '''
+    return (d*np.mean(np.log(r + np.finfo(X.dtype).eps))
+            + np.log(volume_unit_ball) + psi(n) - psi(k))
 
 
 class MCDropout(ExplorationStrategy, Serializable):
@@ -65,7 +116,6 @@ class MCDropout(ExplorationStrategy, Serializable):
         # rs.randint(0, len(self.noise) - dim + 1)
         # noise_idx = noise.sample_index(rs, policy.num_params)
         v = self.noise_stdev * self.rs.randn(len(current_policy_params))
-        # import pdb; pdb.set_trace
         return current_policy_params + v
 
     def generate_mutations(self, current_policy, num_mutations=20):
@@ -77,6 +127,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         return mutants
 
     def generate_dropout_params(self, mutant_params):
+        # TODO: is this proper? since we're dropout some random subsection of the weights without the layers being known...? 
         mask = np.random.binomial(size=mutant_params.shape,n=1, p=1.0 - self.dropout_percent)
         return mutant_params * mask, mask
 
@@ -84,11 +135,10 @@ class MCDropout(ExplorationStrategy, Serializable):
         dropped_out_params, mask = self.generate_dropout_params(mutant_params)
 
         cloned_policy.set_param_values(dropped_out_params)
-        # import pdb; pdb.set_trace()
 
         return rollout(env, cloned_policy, max_path_length)
 
-    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=20, acquisiton_func = "maxvar"):
+    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=50):
         #TODO:
         # Don't need mutations
         # At every iteration run dropout 50 times
@@ -108,33 +158,40 @@ class MCDropout(ExplorationStrategy, Serializable):
                 dropped_out_policies.append(cloned_policy)
 
         stats = []
-        print_stats = ["bayesian_return_std", "bayesian_returns_average", "kl"]
-        samples_queue = FixedPriorityQueue(key_size=2, max_size = batch_size)
+        samples_queue = FixedPriorityQueue(key_size=3, max_size = batch_size)
         # run for 3 times the value and only keep the most uncertain actions
         viewed_samples = 0
-        while viewed_samples < batch_size*4:
+        num_samples = batch_size
+        bar = pyprind.ProgBar(num_samples, track_time=True, title='Collecting Bayesian samples')
+        while viewed_samples < num_samples:
             path_length = 1
             path_return = 0
             observation = env.reset()
             terminal = False
             while not terminal and path_length <= max_path_length:
+                bar.update()
                 actions = []
                 for cloned_policy in dropped_out_policies:
                     action, _ = cloned_policy.get_action(observation)
                     actions.append(action)
-                mean_action = np.mean(actions)
+
+                # BALD TODO: make a function out of this    
+                mean_action = np.mean(actions, axis=0)
                 std_action = float(np.mean(np.std(actions, axis=0)))
+                # estimate entropy
+                ent = entropy(np.vstack(actions))
+                assert action.shape == mean_action.shape
                 assert type(std_action) is float
                 next_observation, reward, terminal, _ = env.step(mean_action)
                 # The heapq sorts by the first element of the tuple, thus will keep the most uncertain actions
-                # we can also get the variance of the reward step by step
-                keys = (std_action, reward)
-                samples_queue.add(keys, (observation, mean_action, reward, terminal, path_length==1, path_length))
+                # we can also et the variance of the reward step by step
+                keys = (ent, std_action, reward)
+                samples_queue.add(keys, (observation, mean_action, reward, terminal, (path_length is 1), path_length))
                 viewed_samples += 1
                 observation = next_observation
                 path_length += 1
-
-        print("Average sample action variance %f" % np.mean([x[0] for x in samples_queue.heap]))
+        print("Average entropy %f, average std %f" % (np.mean([x[0] for x in samples_queue.heap]), np.mean([x[1] for x in samples_queue.heap])))
+        print("Path length stats min %d max %d mean %d std %d" % (np.min([x[-1] for x in samples_queue.heap]), np.max([x[-1] for x in samples_queue.heap]),np.mean([x[-1] for x in samples_queue.heap]),np.std([x[-1] for x in samples_queue.heap]) ))
 
         return samples_queue.get_items()
 

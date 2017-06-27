@@ -147,7 +147,7 @@ class FixedPriorityQueue(object):
     def add(self, keys, item):
         """Add ``item`` to the queue if doesn't already exist."""
         item = tuple(keys) + tuple((next(self.tiebreaker),)) + tuple(item)
-        if len(self.heap) == self.max_size:
+        if len(self.heap) >= self.max_size:
             self.pop_smallest()
         heapq.heappush(self.heap, item)
 
