@@ -5,7 +5,7 @@ from rllab.misc.instrument import stub, run_experiment_lite
 from rllab.exploration_strategies.ou_strategy import OUStrategy
 from sandbox.rocky.tf.policies.deterministic_mlp_policy import DeterministicMLPPolicy
 from sandbox.rocky.tf.q_functions.continuous_mlp_q_function import ContinuousMLPQFunction
-from exploration_strategies.bayesian_evolution_strategy import *
+from exploration_strategies.bayesian_strategy import *
 from sandbox.rocky.tf.envs.base import TfEnv
 from rllab.envs.gym_env import GymEnv
 from rllab.misc import ext

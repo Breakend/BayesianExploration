@@ -1,17 +1,19 @@
 import numpy as np
+import heapq 
 import rllab.misc.logger as logger
 
 def rollout(env, policy, max_path_length):
-    path_length = 0
+    path_length = 1
     path_return = 0
     samples = []
     observation = env.reset()
-    for i in range(max_path_length + 1):
+    terminal = False
+    while not terminal and path_length <= max_path_length: 
         action, _ = policy.get_action(observation)
         next_observation, reward, terminal, _ = env.step(action)
-        path_length += 1
-        samples.append((observation, action, reward, terminal, i==0, path_length))
+        samples.append((observation, action, reward, terminal, path_length==1, path_length))
         observation = next_observation
+        path_length += 1
 
     return samples
 
@@ -118,3 +120,29 @@ class SimpleReplayPool(object):
     @property
     def size(self):
         return self._size
+
+
+class FixedPriorityQueue(object):
+
+    """
+    Combined priority queue and set data structure.
+    """
+    def __init__(self, items=[], max_size=100):
+        """
+        """
+        assert type(max_size) is int
+        assert len(items) <= max_size
+        self.heap = items 
+        heapq.heapify(self.heap)
+        self.max_size = max_size
+
+    def pop_smallest(self):
+        """Remove and return the smallest item from the queue."""
+        smallest = heapq.heappop(self.heap)
+        return smallest
+
+    def add(self, item):
+        """Add ``item`` to the queue if doesn't already exist."""
+        if len(self.heap) == self.max_size:
+            self.pop_smallest()
+        heapq.heappush(self.heap, item)

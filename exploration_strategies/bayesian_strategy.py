@@ -6,7 +6,7 @@ from rllab.spaces.box import Box
 from rllab.exploration_strategies.base import ExplorationStrategy
 import numpy as np
 import numpy.random as nr
-from sampling_utils import rollout
+from sampling_utils import rollout,FixedPriorityQueue
 import tensorflow as tf
 
 def kl_div_p_q(p_mean, p_std, q_mean, q_std):
@@ -37,7 +37,7 @@ class MCDropout(ExplorationStrategy, Serializable):
         self.state = np.ones(self.action_space.flat_dim) * self.mu
         self.reset()
         self.rs = np.random.RandomState()
-        self.first_mask = True
+        self.first_mask = dict()
         self.noise_stdev = 0.9
         self.dropout_percent = .1
 
@@ -87,7 +87,7 @@ class MCDropout(ExplorationStrategy, Serializable):
 
         return rollout(env, cloned_policy, max_path_length)
 
-    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=100, acquisiton_func = "maxvar"):
+    def generate_samples(self, env, current_policy, batch_size, max_path_length=None, num_dropouts=20, acquisiton_func = "maxvar"):
         #TODO:
         # Don't need mutations
         # At every iteration run dropout 50 times
@@ -97,54 +97,47 @@ class MCDropout(ExplorationStrategy, Serializable):
         if max_path_length is None:
             max_path_length = env.horizon
 
-        with tf.variable_scope("dropout_mask", reuse=not self.first_mask):
-            cloned_policy = Serializable.clone(current_policy)
-            self.first_mask = False
-
-        # generate your sampled parameter space
-        mutants = self.generate_mutations(current_policy)
-        current_rollouts = []
-        current_policy_params = current_policy.get_param_values()
-
+        dropped_out_policies = []
         for i in range(num_dropouts):
-            current_rollouts.append(self.get_rollout_with_dropout_mask(env, current_policy, current_policy_params, max_path_length, cloned_policy))
-        rewards = [np.sum([step[2] for step in rollout]) for rollout in current_rollouts]
-        current_mean = np.mean(rewards)
-        current_std = np.std(rewards)
-        logger.log("Current mean (%f) current stsd (%f)" %(current_mean, current_std))
-
+            params, mask = self.generate_dropout_params(current_policy.get_param_values()) 
+            with tf.variable_scope("dropout_mask_%d" % i, reuse=(not self.first_mask.get(i, True))):
+                cloned_policy = Serializable.clone(current_policy)
+                self.first_mask[i] = False
+                cloned_policy.set_param_values(params)
+                dropped_out_policies.append(cloned_policy)
+            
         stats = []
         print_stats = ["bayesian_return_std", "bayesian_returns_average", "kl"]
+        samples_queue = FixedPriorityQueue(max_size = batch_size)
+        # run for 3 times the value and only keep the most uncertain actions
+        viewed_samples = 0
+        while viewed_samples < batch_size*4:
+            path_length = 1
+            path_return = 0
+            observation = env.reset()
+            terminal = False
+            while not terminal and path_length <= max_path_length:
+                actions = []
+                for cloned_policy in dropped_out_policies:
+                    action, _ = cloned_policy.get_action(observation)
+                    actions.append(action) 
+                mean_action = np.mean(actions)
+                std_action = float(np.mean(np.std(actions, axis=0)))
+                assert type(std_action) is float
+                next_observation, reward, terminal, _ = env.step(mean_action)
+                # The heapq sorts by the first element of the tuple, thus will keep the most uncertain actions
+                # we can also get the variance of the reward step by step
+                try:
+                    samples_queue.add((std_action, path_length, observation, mean_action, reward, terminal, path_length==1, path_length))
+                except:
+                    import pdb; pdb.set_trace()
+                viewed_samples += 1
+                observation = next_observation
+                path_length += 1
 
-        for mutant in mutants:
-            # print("Running mutant")
-            rollouts = []
-            # Run pseudo-mcdropout and then check the variance over the reward
-            # TODO: do we need baseline over the variance of the parameters themselves from dropout?
-            for i in range(num_dropouts):
-                # print("Running dropout %d" % i)
-                rollouts.append(self.get_rollout_with_dropout_mask(env, current_policy, mutant, max_path_length, cloned_policy))
-            rewards = [np.sum([step[2] for step in rollout]) for rollout in rollouts]
-            std = np.std(rewards)
-            mean = np.mean(rewards)
-            stat = dict(mutant=mutant, bayesian_return_std=std, bayesian_returns_average=mean, kl=kl_div_p_q(current_mean, current_std, mean, std), rollouts=rollouts)
-            for s in print_stats:
-                logger.log(s + " : " + str(stat[s]))
-            stats.append(stat)
+        print("Average sample action variance %f" % np.mean([x[0] for x in samples_queue.heap]))
 
-        #TODO: extract to util funcs 
-        if acquisiton_func == "maxvar":
-            stat = max(stats, key=(lambda x: x["kl"]))
-            params = stat["mutant"]
-
-        cloned_policy.set_param_values(params)
-
-        # Use the dropout rollouts
-        samples = [step for rollout in stat["rollouts"] for step in rollout]
-
-        while len(samples) < batch_size:
-            samples.extend(rollout(env, cloned_policy, max_path_length))
-        return samples
+        return [x[2:] for x in samples_queue.heap]
 
 
     def get_action(self, t, observation, policy, **kwargs):

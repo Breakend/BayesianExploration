@@ -164,26 +164,26 @@ class DDPG(RLAlgorithm):
             with tf.variable_scope("sample_policy"):
                 sample_policy = Serializable.clone(self.policy)
 
+            updates_until_next_sampling = 0
             for epoch in range(self.n_epochs):
                 logger.push_prefix('epoch #%d | ' % epoch)
                 logger.log("Training started")
                 train_qf_itr, train_policy_itr = 0, 0
-                updates_until_next_sampling = 0
                 for epoch_itr in pyprind.prog_bar(range(self.epoch_length)):
                     if updates_until_next_sampling <= 0:
-                        samples = self.es.generate_samples(self.env, sample_policy, self.batch_size, self.max_path_length)
+                        samples = self.es.generate_samples(self.env, sample_policy, self.epoch_length + 1, self.max_path_length)
                         updates_until_next_sampling = len(samples)
-                        for sample in samples:
-                            observation, action, reward, terminal, initial, path_length = sample
-                            if not terminal and path_length >= self.max_path_length:
-                                terminal = True
-                                # only include the terminal transition in this case if the flag was set
-                                if self.include_horizon_terminal_transitions:
-                                    pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
-                            else:
-                                pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
-
+                    sample = samples[-updates_until_next_sampling]
                     updates_until_next_sampling -= 1
+                    observation, action, reward, terminal, initial, path_length = sample
+                    if not terminal and path_length >= self.max_path_length:
+                        terminal = True
+                        # only include the terminal transition in this case if the flag was set
+                        if self.include_horizon_terminal_transitions:
+                            pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
+                    else:
+                        pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
+
                     if pool.size >= self.min_pool_size:
                         for update_itr in range(self.n_updates_per_sample):
                             # Train policy
