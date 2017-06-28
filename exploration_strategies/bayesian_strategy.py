@@ -89,8 +89,8 @@ class MCDropout(ExplorationStrategy, Serializable):
         self.state = np.ones(self.action_space.flat_dim) * self.mu
         self.reset()
         self.rs = np.random.RandomState()
-        self.first_mask = dict()
-        self.noise_stdev = 0.9
+        self.mutant_policies = dict()
+        self.noise_stdev = 0.03
         self.dropout_percent = .1
 
     def __getstate__(self):
@@ -148,44 +148,48 @@ class MCDropout(ExplorationStrategy, Serializable):
         if max_path_length is None:
             max_path_length = env.horizon
 
-        dropped_out_policies = []
-        for i in range(num_dropouts):
-            params, mask = self.generate_dropout_params(current_policy.get_param_values())
-            with tf.variable_scope("dropout_mask_%d" % i, reuse=(not self.first_mask.get(i, True))):
-                cloned_policy = Serializable.clone(current_policy)
-                self.first_mask[i] = False
-                cloned_policy.set_param_values(params)
-                dropped_out_policies.append(cloned_policy)
+        mutant_policies = []
+        mutants = self.generate_mutations(current_policy, num_mutations=20)
+        for i, params in enumerate(mutants):
+            if i not in self.mutant_policies:
+                with tf.variable_scope("dropout_mask_%d" % i):
+                    cloned_policy = Serializable.clone(current_policy)
+                    self.mutant_policies[i] = cloned_policy
+            else:
+                cloned_policy = self.mutant_policies[i]
+            cloned_policy.set_param_values(params)
 
         stats = []
         samples_queue = FixedPriorityQueue(key_size=3, max_size = batch_size)
         # run for 3 times the value and only keep the most uncertain actions
         viewed_samples = 0
         num_samples = batch_size
-        bar = pyprind.ProgBar(num_samples, track_time=True, title='Collecting Bayesian samples')
+        #bar = pyprind.ProgBar(num_samples, track_time=False, title='Collecting Bayesian samples')
         while viewed_samples < num_samples:
             path_length = 1
             path_return = 0
             observation = env.reset()
             terminal = False
             while not terminal and path_length <= max_path_length:
-                bar.update()
-                actions = []
-                for cloned_policy in dropped_out_policies:
-                    action, _ = cloned_policy.get_action(observation)
-                    actions.append(action)
+                #bar.update()
+                mutant_actions = []
+                for cloned_policy in self.mutant_policies.values():
+                    actions = []
+                    for i in range(num_dropouts):
+                        action, _ = cloned_policy.get_action_with_dropout(observation)
+                        actions.append(action)
+                    actions = np.vstack(actions)
+                    mutant_actions.append(dict(action_mean=np.mean(actions, axis=0), action_std=np.std(actions, axis=0), action_entropy=entropy(actions)))
+                import pdb; pdb.set_trace()
+                action_dict = self.action_acquisition(mutant_actions, acq_type="max_ent")
+                mean_action = action_dict["action_mean"]
+                std_action = action_dict["action_std"]
+                ent = action_dict["action_entropy"]
 
-                # BALD TODO: make a function out of this    
-                mean_action = np.mean(actions, axis=0)
-                std_action = float(np.mean(np.std(actions, axis=0)))
-                # estimate entropy
-                ent = entropy(np.vstack(actions))
-                assert action.shape == mean_action.shape
-                assert type(std_action) is float
                 next_observation, reward, terminal, _ = env.step(mean_action)
                 # The heapq sorts by the first element of the tuple, thus will keep the most uncertain actions
                 # we can also et the variance of the reward step by step
-                keys = (ent, std_action, reward)
+                keys = (ent, np.mean(std_action), reward)
                 samples_queue.add(keys, (observation, mean_action, reward, terminal, (path_length is 1), path_length))
                 viewed_samples += 1
                 observation = next_observation
@@ -195,6 +199,11 @@ class MCDropout(ExplorationStrategy, Serializable):
 
         return samples_queue.get_items()
 
+    def action_acquisition(self, actions, acq_type="max_ent"):
+        if acq_type == "max_ent":
+            return max(actions, key=lambda x: x["action_entropy"])
+        else:
+            raise NotImplementedError
 
     def get_action(self, t, observation, policy, **kwargs):
         #applying MC Dropout and taking the mean action?

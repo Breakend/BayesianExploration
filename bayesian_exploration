@@ -1,549 +1,1151 @@
 [32musing seed 1[0m
-2017-06-27 16:21:24.470838 EDT | Setting seed to 1
+2017-06-27 20:33:20.105677 EDT | Setting seed to 1
 /usr/local/data/petehend/miniconda2/envs/rllab3/lib/python3.5/site-packages/theano/tensor/signal/downsample.py:6: UserWarning: downsample module has been moved to the theano.tensor.signal.pool module.
   "downsample module has been moved to the theano.tensor.signal.pool module.")
-[2017-06-27 16:21:24,604] Making new env: Hopper-v1
+[2017-06-27 20:33:20,237] Making new env: Hopper-v1
 [32musing seed 1[0m
-2017-06-27 16:21:24.735352 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] observation space: Box(11,)
-2017-06-27 16:21:24.735526 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] action space: Box(3,)
-2017-06-27 16:21:24.787127: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
-2017-06-27 16:21:24.787145: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-06-27 16:21:24.787148: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
-2017-06-27 16:21:24.787151: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-06-27 16:21:24.787153: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
-2017-06-27 16:21:24.795120 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] Populating workers...
-2017-06-27 16:21:24.795278 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] Populated
-2017-06-27 16:21:25.116859 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #0 | Training started
+2017-06-27 20:33:20.367204 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] observation space: Box(11,)
+2017-06-27 20:33:20.367377 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] action space: Box(3,)
+2017-06-27 20:33:20.436061: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-27 20:33:20.436079: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-27 20:33:20.436083: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-27 20:33:20.436085: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-27 20:33:20.436088: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-27 20:33:20.445530 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] Populating workers...
+2017-06-27 20:33:20.445691 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] Populated
+2017-06-27 20:33:20.885706 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #0 | Training started
 Warning: No valid output stream.
+Average entropy -1.835937, average std 0.166144
+Path length stats min 1 max 38 mean 16 std 9
+2017-06-27 20:36:14.348927 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #0 | Training finished
+2017-06-27 20:36:14.349083 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #0 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:36:14.349181 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #1 | Training started
 Warning: No valid output stream.
-Average entropy -5.170750, average std 0.048420
-Path length stats min 1 max 31 mean 15 std 8
-2017-06-27 16:21:48.200125 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #0 | Training finished
-2017-06-27 16:21:48.200265 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #0 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:21:48.200367 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #1 | Training started
+Average entropy -0.360316, average std 0.239677
+Path length stats min 8 max 38 mean 20 std 5
+2017-06-27 20:39:00.545564 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #1 | Training finished
+2017-06-27 20:39:00.545727 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #1 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:39:00.545824 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #2 | Training started
 Warning: No valid output stream.
-2017-06-27 16:21:48.205282 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #1 | Training finished
-2017-06-27 16:21:48.205378 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #1 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:21:48.205466 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #2 | Training started
+Average entropy -0.153882, average std 0.255214
+Path length stats min 11 max 110 mean 29 std 17
+2017-06-27 20:41:59.029145 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #2 | Training finished
+2017-06-27 20:41:59.029299 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #2 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:41:59.029396 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #3 | Training started
 Warning: No valid output stream.
+Average entropy 0.023768, average std 0.270365
+Path length stats min 13 max 97 mean 29 std 12
+2017-06-27 20:44:50.018870 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #3 | Training finished
+2017-06-27 20:44:50.019026 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #3 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:44:50.019129 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #4 | Training started
 Warning: No valid output stream.
-Average entropy -4.499328, average std 0.059823
-Path length stats min 9 max 32 mean 22 std 5
-2017-06-27 16:22:13.699634 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #2 | Training finished
-2017-06-27 16:22:13.699777 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #2 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:22:13.699883 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #3 | Training started
+Average entropy 0.048188, average std 0.272061
+Path length stats min 14 max 94 mean 27 std 9
+2017-06-27 20:47:38.776671 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #4 | Training finished
+2017-06-27 20:47:38.776827 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #4 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:47:38.776925 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #5 | Training started
 Warning: No valid output stream.
-2017-06-27 16:22:13.704939 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #3 | Training finished
-2017-06-27 16:22:13.705036 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #3 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:22:13.705125 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #4 | Training started
+Average entropy 0.157514, average std 0.282318
+Path length stats min 15 max 94 mean 28 std 7
+2017-06-27 20:50:27.120355 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #5 | Training finished
+2017-06-27 20:50:27.120510 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #5 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:50:27.120608 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #6 | Training started
 Warning: No valid output stream.
+Average entropy 0.159640, average std 0.282584
+Path length stats min 15 max 101 mean 28 std 10
+2017-06-27 20:53:17.231549 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #6 | Training finished
+2017-06-27 20:53:17.231703 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #6 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:53:17.231800 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #7 | Training started
 Warning: No valid output stream.
-Average entropy -4.258535, average std 0.064812
-Path length stats min 10 max 32 mean 24 std 4
-2017-06-27 16:22:41.687679 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #4 | Training finished
-2017-06-27 16:22:41.687819 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #4 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:22:41.687914 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #5 | Training started
+Average entropy 0.170356, average std 0.283459
+Path length stats min 15 max 101 mean 29 std 9
+2017-06-27 20:56:07.392399 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #7 | Training finished
+2017-06-27 20:56:07.392554 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #7 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:56:07.392651 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #8 | Training started
 Warning: No valid output stream.
-2017-06-27 16:22:41.692851 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #5 | Training finished
-2017-06-27 16:22:41.692948 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #5 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:22:41.693036 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #6 | Training started
+Average entropy 0.216053, average std 0.287180
+Path length stats min 15 max 101 mean 28 std 8
+2017-06-27 20:58:56.127514 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #8 | Training finished
+2017-06-27 20:58:56.127669 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #8 | Trained qf 0 steps, policy 0 steps
+2017-06-27 20:58:56.127768 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #9 | Training started
 Warning: No valid output stream.
+Average entropy 0.256494, average std 0.291099
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:01:43.579473 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #9 | Training finished
+2017-06-27 21:01:43.579621 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #9 | Trained qf 1 steps, policy 1 steps
+2017-06-27 21:01:43.579713 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #9 | Collecting samples for evaluation
 Warning: No valid output stream.
-Average entropy -4.083452, average std 0.068718
-Path length stats min 10 max 32 mean 26 std 2
-2017-06-27 16:23:12.204547 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #6 | Training finished
-2017-06-27 16:23:12.204702 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #6 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:23:12.204798 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #7 | Training started
+2017-06-27 21:01:56.060675 EDT | -----------------------  ---------
+2017-06-27 21:01:56.060811 EDT | Epoch                     9
+2017-06-27 21:01:56.060897 EDT | Iteration                 9
+2017-06-27 21:01:56.060979 EDT | AverageReturn             8.99291
+2017-06-27 21:01:56.061060 EDT | StdReturn                 0.114588
+2017-06-27 21:01:56.061140 EDT | MaxReturn                 9.29563
+2017-06-27 21:01:56.061219 EDT | MinReturn                 8.66925
+2017-06-27 21:01:56.061298 EDT | AverageDiscountedReturn   8.78774
+2017-06-27 21:01:56.061378 EDT | AverageQLoss              4.12485
+2017-06-27 21:01:56.061457 EDT | AveragePolicySurr         0.846869
+2017-06-27 21:01:56.061539 EDT | AverageQ                 -1.19866
+2017-06-27 21:01:56.061621 EDT | AverageAbsQ               1.19866
+2017-06-27 21:01:56.061703 EDT | AverageY                  0.755082
+2017-06-27 21:01:56.061783 EDT | AverageAbsY               0.758161
+2017-06-27 21:01:56.061861 EDT | AverageAbsQYDiff          1.95375
+2017-06-27 21:01:56.061940 EDT | AverageAction             0.119872
+2017-06-27 21:01:56.062019 EDT | PolicyRegParamNorm       19.2556
+2017-06-27 21:01:56.062097 EDT | QFunRegParamNorm         11.165
+2017-06-27 21:01:56.062175 EDT | -----------------------  ---------
+2017-06-27 21:01:56.062328 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #10 | Training started
 Warning: No valid output stream.
-2017-06-27 16:23:12.209807 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #7 | Training finished
-2017-06-27 16:23:12.209903 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #7 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:23:12.209992 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #8 | Training started
+Average entropy 0.247150, average std 0.290951
+Path length stats min 6 max 101 mean 28 std 6
+2017-06-27 21:04:51.507890 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #10 | Training finished
+2017-06-27 21:04:51.508039 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #10 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:04:51.508130 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #10 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 21:05:03.195138 EDT | -----------------------  ----------
+2017-06-27 21:05:03.195274 EDT | Epoch                    10
+2017-06-27 21:05:03.195360 EDT | Iteration                10
+2017-06-27 21:05:03.195442 EDT | AverageReturn            38.8391
+2017-06-27 21:05:03.195522 EDT | StdReturn                 0.964454
+2017-06-27 21:05:03.195601 EDT | MaxReturn                41.7632
+2017-06-27 21:05:03.195680 EDT | MinReturn                36.6749
+2017-06-27 21:05:03.195759 EDT | AverageDiscountedReturn  36.5961
+2017-06-27 21:05:03.195838 EDT | AverageQLoss              0.0377778
+2017-06-27 21:05:03.195916 EDT | AveragePolicySurr        -1.57698
+2017-06-27 21:05:03.195995 EDT | AverageQ                  1.48351
+2017-06-27 21:05:03.196073 EDT | AverageAbsQ               1.48638
+2017-06-27 21:05:03.196151 EDT | AverageY                  1.48512
+2017-06-27 21:05:03.196230 EDT | AverageAbsY               1.48523
+2017-06-27 21:05:03.196309 EDT | AverageAbsQYDiff          0.119804
+2017-06-27 21:05:03.196387 EDT | AverageAction             0.980495
+2017-06-27 21:05:03.196466 EDT | PolicyRegParamNorm       20.6743
+2017-06-27 21:05:03.196544 EDT | QFunRegParamNorm         11.5761
+2017-06-27 21:05:03.196622 EDT | -----------------------  ----------
+2017-06-27 21:05:03.196743 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #11 | Training started
 Warning: No valid output stream.
-Average entropy -3.937404, average std 0.071663
-Path length stats min 23 max 32 mean 27 std 1
-2017-06-27 16:23:44.855670 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #8 | Training finished
-2017-06-27 16:23:44.855813 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #8 | Trained qf 0 steps, policy 0 steps
-2017-06-27 16:23:44.855908 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #9 | Training started
+Average entropy 0.245630, average std 0.290924
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:07:59.421700 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #11 | Training finished
+2017-06-27 21:07:59.421850 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #11 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:07:59.421940 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #11 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:23:44.950655 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #9 | Training finished
-2017-06-27 16:23:44.950797 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #9 | Trained qf 1 steps, policy 1 steps
-2017-06-27 16:23:44.950889 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #9 | Collecting samples for evaluation
+2017-06-27 21:08:10.219976 EDT | -----------------------  ---------
+2017-06-27 21:08:10.220111 EDT | Epoch                    11
+2017-06-27 21:08:10.220196 EDT | Iteration                11
+2017-06-27 21:08:10.220277 EDT | AverageReturn            38.7225
+2017-06-27 21:08:10.220357 EDT | StdReturn                 0.899971
+2017-06-27 21:08:10.220435 EDT | MaxReturn                40.6318
+2017-06-27 21:08:10.220514 EDT | MinReturn                36.6626
+2017-06-27 21:08:10.220592 EDT | AverageDiscountedReturn  36.4964
+2017-06-27 21:08:10.220670 EDT | AverageQLoss              0.174569
+2017-06-27 21:08:10.220748 EDT | AveragePolicySurr        -2.81817
+2017-06-27 21:08:10.220825 EDT | AverageQ                  2.6326
+2017-06-27 21:08:10.220903 EDT | AverageAbsQ               2.63263
+2017-06-27 21:08:10.220981 EDT | AverageY                  2.63353
+2017-06-27 21:08:10.221059 EDT | AverageAbsY               2.63356
+2017-06-27 21:08:10.221140 EDT | AverageAbsQYDiff          0.30235
+2017-06-27 21:08:10.221219 EDT | AverageAction             0.999905
+2017-06-27 21:08:10.221297 EDT | PolicyRegParamNorm       21.0234
+2017-06-27 21:08:10.221379 EDT | QFunRegParamNorm         13.3404
+2017-06-27 21:08:10.221458 EDT | -----------------------  ---------
+2017-06-27 21:08:10.221576 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #12 | Training started
 Warning: No valid output stream.
-2017-06-27 16:23:57.800854 EDT | -----------------------  ----------
-2017-06-27 16:23:57.800988 EDT | Epoch                     9
-2017-06-27 16:23:57.801075 EDT | Iteration                 9
-2017-06-27 16:23:57.801157 EDT | AverageReturn            11.9447
-2017-06-27 16:23:57.801240 EDT | StdReturn                 0.237264
-2017-06-27 16:23:57.801320 EDT | MaxReturn                12.4828
-2017-06-27 16:23:57.801398 EDT | MinReturn                11.3986
-2017-06-27 16:23:57.801477 EDT | AverageDiscountedReturn  11.579
-2017-06-27 16:23:57.801554 EDT | AverageQLoss              0.252748
-2017-06-27 16:23:57.801632 EDT | AveragePolicySurr         0.176467
-2017-06-27 16:23:57.801710 EDT | AverageQ                 -0.283113
-2017-06-27 16:23:57.801788 EDT | AverageAbsQ               0.283113
-2017-06-27 16:23:57.801866 EDT | AverageY                  0.16448
-2017-06-27 16:23:57.801944 EDT | AverageAbsY               0.212876
-2017-06-27 16:23:57.802021 EDT | AverageAbsQYDiff          0.447593
-2017-06-27 16:23:57.802099 EDT | AverageAction             0.0605146
-2017-06-27 16:23:57.802176 EDT | PolicyRegParamNorm       19.2289
-2017-06-27 16:23:57.802257 EDT | QFunRegParamNorm         11.0978
-2017-06-27 16:23:57.802352 EDT | -----------------------  ----------
-2017-06-27 16:23:57.802494 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #10 | Training started
+Average entropy 0.226156, average std 0.290909
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:11:02.746687 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #12 | Training finished
+2017-06-27 21:11:02.746836 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #12 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:11:02.746926 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #12 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 21:11:13.117672 EDT | -----------------------  ---------
+2017-06-27 21:11:13.117807 EDT | Epoch                    12
+2017-06-27 21:11:13.117892 EDT | Iteration                12
+2017-06-27 21:11:13.117973 EDT | AverageReturn            38.8212
+2017-06-27 21:11:13.118053 EDT | StdReturn                 0.890318
+2017-06-27 21:11:13.118132 EDT | MaxReturn                40.8546
+2017-06-27 21:11:13.118210 EDT | MinReturn                36.5539
+2017-06-27 21:11:13.118295 EDT | AverageDiscountedReturn  36.5857
+2017-06-27 21:11:13.118378 EDT | AverageQLoss              0.464306
+2017-06-27 21:11:13.118457 EDT | AveragePolicySurr        -3.96449
+2017-06-27 21:11:13.118535 EDT | AverageQ                  3.67238
+2017-06-27 21:11:13.118613 EDT | AverageAbsQ               3.67251
+2017-06-27 21:11:13.118691 EDT | AverageY                  3.67389
+2017-06-27 21:11:13.118769 EDT | AverageAbsY               3.67393
+2017-06-27 21:11:13.118846 EDT | AverageAbsQYDiff          0.499705
+2017-06-27 21:11:13.118924 EDT | AverageAction             0.999993
+2017-06-27 21:11:13.119001 EDT | PolicyRegParamNorm       21.1954
+2017-06-27 21:11:13.119079 EDT | QFunRegParamNorm         16.3286
+2017-06-27 21:11:13.119157 EDT | -----------------------  ---------
+2017-06-27 21:11:13.119275 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #13 | Training started
 Warning: No valid output stream.
-Average entropy -3.609964, average std 0.088173
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:24:40.229176 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #10 | Training finished
-2017-06-27 16:24:40.229326 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #10 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:24:40.229418 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #10 | Collecting samples for evaluation
+Average entropy 0.222472, average std 0.290909
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:14:03.224839 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #13 | Training finished
+2017-06-27 21:14:03.224989 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #13 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:14:03.225080 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #13 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:24:52.652277 EDT | -----------------------  -----------
-2017-06-27 16:24:52.652414 EDT | Epoch                    10
-2017-06-27 16:24:52.652504 EDT | Iteration                10
-2017-06-27 16:24:52.652589 EDT | AverageReturn             4.79267
-2017-06-27 16:24:52.652673 EDT | StdReturn                 0.0314263
-2017-06-27 16:24:52.652755 EDT | MaxReturn                 4.86563
-2017-06-27 16:24:52.652837 EDT | MinReturn                 4.65173
-2017-06-27 16:24:52.652919 EDT | AverageDiscountedReturn   4.72315
-2017-06-27 16:24:52.653002 EDT | AverageQLoss              0.00321188
-2017-06-27 16:24:52.653083 EDT | AveragePolicySurr        -0.383107
-2017-06-27 16:24:52.653165 EDT | AverageQ                  0.21402
-2017-06-27 16:24:52.653247 EDT | AverageAbsQ               0.255096
-2017-06-27 16:24:52.653328 EDT | AverageY                  0.215235
-2017-06-27 16:24:52.653410 EDT | AverageAbsY               0.257793
-2017-06-27 16:24:52.653491 EDT | AverageAbsQYDiff          0.0276522
-2017-06-27 16:24:52.653572 EDT | AverageAction             0.704064
-2017-06-27 16:24:52.653653 EDT | PolicyRegParamNorm       21.6553
-2017-06-27 16:24:52.653812 EDT | QFunRegParamNorm         11.2467
-2017-06-27 16:24:52.653894 EDT | -----------------------  -----------
-2017-06-27 16:24:52.654020 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #11 | Training started
+2017-06-27 21:14:14.900202 EDT | -----------------------  ---------
+2017-06-27 21:14:14.900335 EDT | Epoch                    13
+2017-06-27 21:14:14.900421 EDT | Iteration                13
+2017-06-27 21:14:14.900501 EDT | AverageReturn            38.7767
+2017-06-27 21:14:14.900581 EDT | StdReturn                 0.942016
+2017-06-27 21:14:14.900660 EDT | MaxReturn                40.7196
+2017-06-27 21:14:14.900738 EDT | MinReturn                36.6904
+2017-06-27 21:14:14.900817 EDT | AverageDiscountedReturn  36.5449
+2017-06-27 21:14:14.900895 EDT | AverageQLoss              0.808767
+2017-06-27 21:14:14.900974 EDT | AveragePolicySurr        -4.84323
+2017-06-27 21:14:14.901052 EDT | AverageQ                  4.68575
+2017-06-27 21:14:14.901130 EDT | AverageAbsQ               4.68673
+2017-06-27 21:14:14.901209 EDT | AverageY                  4.68886
+2017-06-27 21:14:14.901287 EDT | AverageAbsY               4.68889
+2017-06-27 21:14:14.901365 EDT | AverageAbsQYDiff          0.661125
+2017-06-27 21:14:14.901443 EDT | AverageAction             0.999985
+2017-06-27 21:14:14.901521 EDT | PolicyRegParamNorm       21.1853
+2017-06-27 21:14:14.901602 EDT | QFunRegParamNorm         18.8294
+2017-06-27 21:14:14.901681 EDT | -----------------------  ---------
+2017-06-27 21:14:14.901799 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #14 | Training started
 Warning: No valid output stream.
-2017-06-27 16:24:59.966371 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #11 | Training finished
-2017-06-27 16:24:59.966522 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #11 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:24:59.966614 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #11 | Collecting samples for evaluation
+Average entropy 0.225453, average std 0.290909
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:17:07.233883 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #14 | Training finished
+2017-06-27 21:17:07.234026 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #14 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:17:07.234122 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #14 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:25:11.277009 EDT | -----------------------  ----------
-2017-06-27 16:25:11.277145 EDT | Epoch                    11
-2017-06-27 16:25:11.277233 EDT | Iteration                11
-2017-06-27 16:25:11.277315 EDT | AverageReturn             1.24662
-2017-06-27 16:25:11.277397 EDT | StdReturn                 0.179002
-2017-06-27 16:25:11.277478 EDT | MaxReturn                 2.26028
-2017-06-27 16:25:11.277559 EDT | MinReturn                 0.964589
-2017-06-27 16:25:11.277640 EDT | AverageDiscountedReturn   1.26935
-2017-06-27 16:25:11.277721 EDT | AverageQLoss              0.0107085
-2017-06-27 16:25:11.277800 EDT | AveragePolicySurr        -0.572032
-2017-06-27 16:25:11.277881 EDT | AverageQ                  0.347866
-2017-06-27 16:25:11.277966 EDT | AverageAbsQ               0.380065
-2017-06-27 16:25:11.278048 EDT | AverageY                  0.348122
-2017-06-27 16:25:11.278128 EDT | AverageAbsY               0.387367
-2017-06-27 16:25:11.278208 EDT | AverageAbsQYDiff          0.0668762
-2017-06-27 16:25:11.278293 EDT | AverageAction             0.931358
-2017-06-27 16:25:11.278377 EDT | PolicyRegParamNorm       24.0263
-2017-06-27 16:25:11.278457 EDT | QFunRegParamNorm         11.3944
-2017-06-27 16:25:11.278537 EDT | -----------------------  ----------
-2017-06-27 16:25:11.278664 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #12 | Training started
+2017-06-27 21:17:12.794964 EDT | -----------------------  ---------
+2017-06-27 21:17:12.795097 EDT | Epoch                    14
+2017-06-27 21:17:12.795182 EDT | Iteration                14
+2017-06-27 21:17:12.795262 EDT | AverageReturn            38.7094
+2017-06-27 21:17:12.795342 EDT | StdReturn                 0.944066
+2017-06-27 21:17:12.795420 EDT | MaxReturn                40.8295
+2017-06-27 21:17:12.795498 EDT | MinReturn                36.7403
+2017-06-27 21:17:12.795575 EDT | AverageDiscountedReturn  36.4857
+2017-06-27 21:17:12.795652 EDT | AverageQLoss              1.1873
+2017-06-27 21:17:12.795730 EDT | AveragePolicySurr        -5.4376
+2017-06-27 21:17:12.795807 EDT | AverageQ                  5.5157
+2017-06-27 21:17:12.795884 EDT | AverageAbsQ               5.5185
+2017-06-27 21:17:12.795962 EDT | AverageY                  5.51847
+2017-06-27 21:17:12.796039 EDT | AverageAbsY               5.51851
+2017-06-27 21:17:12.796116 EDT | AverageAbsQYDiff          0.810221
+2017-06-27 21:17:12.796289 EDT | AverageAction             0.999985
+2017-06-27 21:17:12.796368 EDT | PolicyRegParamNorm       21.2202
+2017-06-27 21:17:12.796445 EDT | QFunRegParamNorm         20.7953
+2017-06-27 21:17:12.796523 EDT | -----------------------  ---------
+2017-06-27 21:17:12.796641 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #15 | Training started
 Warning: No valid output stream.
+Average entropy 0.226539, average std 0.290909
+Path length stats min 16 max 101 mean 28 std 6
+2017-06-27 21:20:04.029866 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #15 | Training finished
+2017-06-27 21:20:04.030014 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #15 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:20:04.030105 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #15 | Collecting samples for evaluation
 Warning: No valid output stream.
-Average entropy -3.628610, average std 0.088138
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:25:56.171922 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #12 | Training finished
-2017-06-27 16:25:56.172073 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #12 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:25:56.172166 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #12 | Collecting samples for evaluation
+2017-06-27 21:20:15.919263 EDT | -----------------------  ----------
+2017-06-27 21:20:15.919394 EDT | Epoch                    15
+2017-06-27 21:20:15.919478 EDT | Iteration                15
+2017-06-27 21:20:15.919559 EDT | AverageReturn             5.94085
+2017-06-27 21:20:15.919639 EDT | StdReturn                 0.0654518
+2017-06-27 21:20:15.919717 EDT | MaxReturn                 6.12938
+2017-06-27 21:20:15.919796 EDT | MinReturn                 5.78697
+2017-06-27 21:20:15.919873 EDT | AverageDiscountedReturn   5.85714
+2017-06-27 21:20:15.919951 EDT | AverageQLoss              1.63975
+2017-06-27 21:20:15.920028 EDT | AveragePolicySurr        -5.65453
+2017-06-27 21:20:15.920106 EDT | AverageQ                  5.98251
+2017-06-27 21:20:15.920183 EDT | AverageAbsQ               5.98774
+2017-06-27 21:20:15.920260 EDT | AverageY                  5.98433
+2017-06-27 21:20:15.920337 EDT | AverageAbsY               5.98435
+2017-06-27 21:20:15.920415 EDT | AverageAbsQYDiff          0.961303
+2017-06-27 21:20:15.920492 EDT | AverageAction             0.999972
+2017-06-27 21:20:15.920569 EDT | PolicyRegParamNorm       23.1254
+2017-06-27 21:20:15.920646 EDT | QFunRegParamNorm         22.3251
+2017-06-27 21:20:15.920723 EDT | -----------------------  ----------
+2017-06-27 21:20:15.920844 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #16 | Training started
 Warning: No valid output stream.
-2017-06-27 16:26:07.156317 EDT | -----------------------  ----------
-2017-06-27 16:26:07.156456 EDT | Epoch                    12
-2017-06-27 16:26:07.156544 EDT | Iteration                12
-2017-06-27 16:26:07.156629 EDT | AverageReturn             1.33468
-2017-06-27 16:26:07.156711 EDT | StdReturn                 0.103773
-2017-06-27 16:26:07.156793 EDT | MaxReturn                 1.58971
-2017-06-27 16:26:07.156876 EDT | MinReturn                 1.06397
-2017-06-27 16:26:07.156958 EDT | AverageDiscountedReturn   1.35625
-2017-06-27 16:26:07.157039 EDT | AverageQLoss              0.0375523
-2017-06-27 16:26:07.157120 EDT | AveragePolicySurr        -1.10315
-2017-06-27 16:26:07.157201 EDT | AverageQ                  0.672581
-2017-06-27 16:26:07.157282 EDT | AverageAbsQ               0.69751
-2017-06-27 16:26:07.157362 EDT | AverageY                  0.673073
-2017-06-27 16:26:07.157443 EDT | AverageAbsY               0.716808
-2017-06-27 16:26:07.157522 EDT | AverageAbsQYDiff          0.133253
-2017-06-27 16:26:07.157603 EDT | AverageAction             0.923488
-2017-06-27 16:26:07.157683 EDT | PolicyRegParamNorm       24.3513
-2017-06-27 16:26:07.157763 EDT | QFunRegParamNorm         12.0755
-2017-06-27 16:26:07.157843 EDT | -----------------------  ----------
-2017-06-27 16:26:07.158074 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #13 | Training started
+Average entropy 0.213452, average std 0.290909
+Path length stats min 7 max 101 mean 28 std 6
+2017-06-27 21:23:05.320615 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #16 | Training finished
+2017-06-27 21:23:05.320763 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #16 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:23:05.320853 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #16 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:26:14.362463 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #13 | Training finished
-2017-06-27 16:26:14.362609 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #13 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:26:14.362703 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #13 | Collecting samples for evaluation
+2017-06-27 21:23:17.149118 EDT | -----------------------  ---------
+2017-06-27 21:23:17.149255 EDT | Epoch                    16
+2017-06-27 21:23:17.149342 EDT | Iteration                16
+2017-06-27 21:23:17.149424 EDT | AverageReturn            11.2336
+2017-06-27 21:23:17.149508 EDT | StdReturn                 0.765496
+2017-06-27 21:23:17.149588 EDT | MaxReturn                12.7479
+2017-06-27 21:23:17.149666 EDT | MinReturn                10.6204
+2017-06-27 21:23:17.149745 EDT | AverageDiscountedReturn  10.9497
+2017-06-27 21:23:17.149824 EDT | AverageQLoss              3.28834
+2017-06-27 21:23:17.149902 EDT | AveragePolicySurr        -7.15705
+2017-06-27 21:23:17.149981 EDT | AverageQ                  6.62785
+2017-06-27 21:23:17.150059 EDT | AverageAbsQ               6.63811
+2017-06-27 21:23:17.150137 EDT | AverageY                  6.63192
+2017-06-27 21:23:17.150215 EDT | AverageAbsY               6.63194
+2017-06-27 21:23:17.150297 EDT | AverageAbsQYDiff          1.35251
+2017-06-27 21:23:17.150377 EDT | AverageAction             0.702325
+2017-06-27 21:23:17.150456 EDT | PolicyRegParamNorm       28.1413
+2017-06-27 21:23:17.150534 EDT | QFunRegParamNorm         24.1405
+2017-06-27 21:23:17.150612 EDT | -----------------------  ---------
+2017-06-27 21:23:17.150732 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #17 | Training started
 Warning: No valid output stream.
-2017-06-27 16:26:26.901002 EDT | -----------------------  ----------
-2017-06-27 16:26:26.901137 EDT | Epoch                    13
-2017-06-27 16:26:26.901227 EDT | Iteration                13
-2017-06-27 16:26:26.901312 EDT | AverageReturn             1.56421
-2017-06-27 16:26:26.901394 EDT | StdReturn                 0.115103
-2017-06-27 16:26:26.901476 EDT | MaxReturn                 1.89922
-2017-06-27 16:26:26.901558 EDT | MinReturn                 1.24654
-2017-06-27 16:26:26.901639 EDT | AverageDiscountedReturn   1.58169
-2017-06-27 16:26:26.901721 EDT | AverageQLoss              0.0892247
-2017-06-27 16:26:26.901802 EDT | AveragePolicySurr        -1.8885
-2017-06-27 16:26:26.901883 EDT | AverageQ                  1.16313
-2017-06-27 16:26:26.901964 EDT | AverageAbsQ               1.19891
-2017-06-27 16:26:26.902044 EDT | AverageY                  1.16377
-2017-06-27 16:26:26.902125 EDT | AverageAbsY               1.2132
-2017-06-27 16:26:26.902206 EDT | AverageAbsQYDiff          0.209442
-2017-06-27 16:26:26.902295 EDT | AverageAction             0.93478
-2017-06-27 16:26:26.902379 EDT | PolicyRegParamNorm       25.4013
-2017-06-27 16:26:26.902461 EDT | QFunRegParamNorm         13.4106
-2017-06-27 16:26:26.902548 EDT | -----------------------  ----------
-2017-06-27 16:26:26.902673 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #14 | Training started
+Average entropy 0.336317, average std 0.338471
+Path length stats min 5 max 96 mean 24 std 10
+2017-06-27 21:26:07.987394 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #17 | Training finished
+2017-06-27 21:26:07.987542 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #17 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:26:07.987633 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #17 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 21:26:19.397494 EDT | -----------------------  ---------
+2017-06-27 21:26:19.397626 EDT | Epoch                    17
+2017-06-27 21:26:19.397710 EDT | Iteration                17
+2017-06-27 21:26:19.397790 EDT | AverageReturn            28.4902
+2017-06-27 21:26:19.397868 EDT | StdReturn                 1.15119
+2017-06-27 21:26:19.397945 EDT | MaxReturn                29.6777
+2017-06-27 21:26:19.398023 EDT | MinReturn                23.1991
+2017-06-27 21:26:19.398100 EDT | AverageDiscountedReturn  26.8854
+2017-06-27 21:26:19.398177 EDT | AverageQLoss              4.23731
+2017-06-27 21:26:19.398254 EDT | AveragePolicySurr        -8.58306
+2017-06-27 21:26:19.398338 EDT | AverageQ                  7.65904
+2017-06-27 21:26:19.398415 EDT | AverageAbsQ               7.67285
+2017-06-27 21:26:19.398493 EDT | AverageY                  7.66365
+2017-06-27 21:26:19.398570 EDT | AverageAbsY               7.66366
+2017-06-27 21:26:19.398647 EDT | AverageAbsQYDiff          1.53863
+2017-06-27 21:26:19.398723 EDT | AverageAction             0.614097
+2017-06-27 21:26:19.398801 EDT | PolicyRegParamNorm       32.1071
+2017-06-27 21:26:19.398878 EDT | QFunRegParamNorm         25.8962
+2017-06-27 21:26:19.398955 EDT | -----------------------  ---------
+2017-06-27 21:26:19.399074 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #18 | Training started
 Warning: No valid output stream.
-Average entropy -3.619172, average std 0.088151
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:27:14.286849 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #14 | Training finished
-2017-06-27 16:27:14.287004 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #14 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:27:14.287110 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #14 | Collecting samples for evaluation
+Average entropy 0.335275, average std 0.338326
+Path length stats min 5 max 96 mean 24 std 10
+2017-06-27 21:29:09.696110 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #18 | Training finished
+2017-06-27 21:29:09.696261 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #18 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:29:09.696352 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #18 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:27:26.591109 EDT | -----------------------  ---------
-2017-06-27 16:27:26.591250 EDT | Epoch                    14
-2017-06-27 16:27:26.591341 EDT | Iteration                14
-2017-06-27 16:27:26.591427 EDT | AverageReturn             0.731199
-2017-06-27 16:27:26.591512 EDT | StdReturn                 0.138026
-2017-06-27 16:27:26.591595 EDT | MaxReturn                 1.93078
-2017-06-27 16:27:26.591678 EDT | MinReturn                 0.442776
-2017-06-27 16:27:26.591760 EDT | AverageDiscountedReturn   0.781723
-2017-06-27 16:27:26.591842 EDT | AverageQLoss              0.195317
-2017-06-27 16:27:26.591925 EDT | AveragePolicySurr        -3.11946
-2017-06-27 16:27:26.592009 EDT | AverageQ                  1.88178
-2017-06-27 16:27:26.592090 EDT | AverageAbsQ               1.92815
-2017-06-27 16:27:26.592172 EDT | AverageY                  1.88318
-2017-06-27 16:27:26.592253 EDT | AverageAbsY               1.9361
-2017-06-27 16:27:26.592334 EDT | AverageAbsQYDiff          0.312324
-2017-06-27 16:27:26.592415 EDT | AverageAction             0.937066
-2017-06-27 16:27:26.592498 EDT | PolicyRegParamNorm       27.8509
-2017-06-27 16:27:26.592579 EDT | QFunRegParamNorm         15.1907
-2017-06-27 16:27:26.592661 EDT | -----------------------  ---------
-2017-06-27 16:27:26.592785 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #15 | Training started
+2017-06-27 21:29:20.932924 EDT | -----------------------  ----------
+2017-06-27 21:29:20.933058 EDT | Epoch                    18
+2017-06-27 21:29:20.933145 EDT | Iteration                18
+2017-06-27 21:29:20.933226 EDT | AverageReturn             3.25671
+2017-06-27 21:29:20.933306 EDT | StdReturn                 0.0564513
+2017-06-27 21:29:20.933385 EDT | MaxReturn                 3.46127
+2017-06-27 21:29:20.933465 EDT | MinReturn                 3.12068
+2017-06-27 21:29:20.933544 EDT | AverageDiscountedReturn   3.28773
+2017-06-27 21:29:20.933623 EDT | AverageQLoss              4.91791
+2017-06-27 21:29:20.933703 EDT | AveragePolicySurr        -9.85608
+2017-06-27 21:29:20.933781 EDT | AverageQ                  8.73423
+2017-06-27 21:29:20.933864 EDT | AverageAbsQ               8.75482
+2017-06-27 21:29:20.933944 EDT | AverageY                  8.73929
+2017-06-27 21:29:20.934023 EDT | AverageAbsY               8.7393
+2017-06-27 21:29:20.934102 EDT | AverageAbsQYDiff          1.63738
+2017-06-27 21:29:20.934292 EDT | AverageAction             0.262251
+2017-06-27 21:29:20.934377 EDT | PolicyRegParamNorm       35.024
+2017-06-27 21:29:20.934457 EDT | QFunRegParamNorm         27.7066
+2017-06-27 21:29:20.934536 EDT | -----------------------  ----------
+2017-06-27 21:29:20.934656 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #19 | Training started
 Warning: No valid output stream.
-2017-06-27 16:27:33.836097 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #15 | Training finished
-2017-06-27 16:27:33.836248 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #15 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:27:33.836342 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #15 | Collecting samples for evaluation
+Average entropy 0.375031, average std 0.342888
+Path length stats min 5 max 46 mean 21 std 10
+2017-06-27 21:32:11.232577 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #19 | Training finished
+2017-06-27 21:32:11.232723 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #19 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:32:11.232813 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #19 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:27:46.043264 EDT | -----------------------  ---------
-2017-06-27 16:27:46.043422 EDT | Epoch                    15
-2017-06-27 16:27:46.043527 EDT | Iteration                15
-2017-06-27 16:27:46.043625 EDT | AverageReturn             1.59799
-2017-06-27 16:27:46.043722 EDT | StdReturn                 0.435151
-2017-06-27 16:27:46.043817 EDT | MaxReturn                 1.99437
-2017-06-27 16:27:46.043913 EDT | MinReturn                 0.326573
-2017-06-27 16:27:46.044008 EDT | AverageDiscountedReturn   1.61728
-2017-06-27 16:27:46.044102 EDT | AverageQLoss              0.420546
-2017-06-27 16:27:46.044197 EDT | AveragePolicySurr        -4.91108
-2017-06-27 16:27:46.044291 EDT | AverageQ                  2.93054
-2017-06-27 16:27:46.044386 EDT | AverageAbsQ               2.98902
-2017-06-27 16:27:46.044481 EDT | AverageY                  2.93237
-2017-06-27 16:27:46.044576 EDT | AverageAbsY               2.99055
-2017-06-27 16:27:46.044671 EDT | AverageAbsQYDiff          0.456163
-2017-06-27 16:27:46.044766 EDT | AverageAction             0.961664
-2017-06-27 16:27:46.044860 EDT | PolicyRegParamNorm       30.0811
-2017-06-27 16:27:46.044954 EDT | QFunRegParamNorm         17.4836
-2017-06-27 16:27:46.045048 EDT | -----------------------  ---------
-2017-06-27 16:27:46.045190 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #16 | Training started
+2017-06-27 21:32:22.612637 EDT | -----------------------  ----------
+2017-06-27 21:32:22.612772 EDT | Epoch                     19
+2017-06-27 21:32:22.612856 EDT | Iteration                 19
+2017-06-27 21:32:22.612937 EDT | AverageReturn             20.6719
+2017-06-27 21:32:22.613017 EDT | StdReturn                  0.745289
+2017-06-27 21:32:22.613097 EDT | MaxReturn                 22.1716
+2017-06-27 21:32:22.613175 EDT | MinReturn                 17.472
+2017-06-27 21:32:22.613253 EDT | AverageDiscountedReturn   18.7525
+2017-06-27 21:32:22.613331 EDT | AverageQLoss               6.37407
+2017-06-27 21:32:22.613409 EDT | AveragePolicySurr        -11.1878
+2017-06-27 21:32:22.613487 EDT | AverageQ                   9.77379
+2017-06-27 21:32:22.613566 EDT | AverageAbsQ                9.80478
+2017-06-27 21:32:22.613643 EDT | AverageY                   9.7777
+2017-06-27 21:32:22.613721 EDT | AverageAbsY                9.77985
+2017-06-27 21:32:22.613799 EDT | AverageAbsQYDiff           1.85447
+2017-06-27 21:32:22.613877 EDT | AverageAction              0.291129
+2017-06-27 21:32:22.613955 EDT | PolicyRegParamNorm        37.7624
+2017-06-27 21:32:22.614032 EDT | QFunRegParamNorm          29.5056
+2017-06-27 21:32:22.614110 EDT | -----------------------  ----------
+2017-06-27 21:32:22.614229 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #20 | Training started
 Warning: No valid output stream.
+Average entropy 0.402348, average std 0.347910
+Path length stats min 5 max 46 mean 23 std 11
+2017-06-27 21:35:16.883634 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #20 | Training finished
+2017-06-27 21:35:16.883787 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #20 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:35:16.883879 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #20 | Collecting samples for evaluation
 Warning: No valid output stream.
-Average entropy -3.615474, average std 0.088165
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:28:35.896093 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #16 | Training finished
-2017-06-27 16:28:35.896255 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #16 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:28:35.896356 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #16 | Collecting samples for evaluation
+2017-06-27 21:35:28.486783 EDT | -----------------------  ----------
+2017-06-27 21:35:28.486919 EDT | Epoch                     20
+2017-06-27 21:35:28.487004 EDT | Iteration                 20
+2017-06-27 21:35:28.487085 EDT | AverageReturn             16.6625
+2017-06-27 21:35:28.487163 EDT | StdReturn                  1.22886
+2017-06-27 21:35:28.487242 EDT | MaxReturn                 19.2629
+2017-06-27 21:35:28.487320 EDT | MinReturn                 14.2572
+2017-06-27 21:35:28.487398 EDT | AverageDiscountedReturn   15.5874
+2017-06-27 21:35:28.487475 EDT | AverageQLoss               8.73972
+2017-06-27 21:35:28.487553 EDT | AveragePolicySurr        -12.6867
+2017-06-27 21:35:28.487630 EDT | AverageQ                  10.9325
+2017-06-27 21:35:28.487708 EDT | AverageAbsQ               10.9774
+2017-06-27 21:35:28.487785 EDT | AverageY                  10.9393
+2017-06-27 21:35:28.487863 EDT | AverageAbsY               10.944
+2017-06-27 21:35:28.487940 EDT | AverageAbsQYDiff           2.18198
+2017-06-27 21:35:28.488018 EDT | AverageAction              0.291659
+2017-06-27 21:35:28.488095 EDT | PolicyRegParamNorm        40.4843
+2017-06-27 21:35:28.488172 EDT | QFunRegParamNorm          31.2979
+2017-06-27 21:35:28.488254 EDT | -----------------------  ----------
+2017-06-27 21:35:28.488375 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #21 | Training started
 Warning: No valid output stream.
-2017-06-27 16:28:47.823596 EDT | -----------------------  ---------
-2017-06-27 16:28:47.823745 EDT | Epoch                    16
-2017-06-27 16:28:47.823838 EDT | Iteration                16
-2017-06-27 16:28:47.823924 EDT | AverageReturn             1.61475
-2017-06-27 16:28:47.824008 EDT | StdReturn                 0.10002
-2017-06-27 16:28:47.824091 EDT | MaxReturn                 1.88722
-2017-06-27 16:28:47.824174 EDT | MinReturn                 1.33274
-2017-06-27 16:28:47.824258 EDT | AverageDiscountedReturn   1.63124
-2017-06-27 16:28:47.824340 EDT | AverageQLoss              0.9226
-2017-06-27 16:28:47.824423 EDT | AveragePolicySurr        -7.44834
-2017-06-27 16:28:47.824506 EDT | AverageQ                  4.47888
-2017-06-27 16:28:47.824589 EDT | AverageAbsQ               4.54987
-2017-06-27 16:28:47.824673 EDT | AverageY                  4.48245
-2017-06-27 16:28:47.824755 EDT | AverageAbsY               4.54487
-2017-06-27 16:28:47.824838 EDT | AverageAbsQYDiff          0.670111
-2017-06-27 16:28:47.824921 EDT | AverageAction             0.98974
-2017-06-27 16:28:47.825003 EDT | PolicyRegParamNorm       31.2236
-2017-06-27 16:28:47.825087 EDT | QFunRegParamNorm         20.2473
-2017-06-27 16:28:47.825169 EDT | -----------------------  ---------
-2017-06-27 16:28:47.825295 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #17 | Training started
+Average entropy 0.407979, average std 0.349363
+Path length stats min 5 max 46 mean 23 std 11
+2017-06-27 21:38:19.283283 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #21 | Training finished
+2017-06-27 21:38:19.283431 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #21 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:38:19.283522 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #21 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:28:55.118099 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #17 | Training finished
-2017-06-27 16:28:55.118252 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #17 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:28:55.118368 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #17 | Collecting samples for evaluation
+2017-06-27 21:38:30.746160 EDT | -----------------------  ----------
+2017-06-27 21:38:30.746298 EDT | Epoch                     21
+2017-06-27 21:38:30.746387 EDT | Iteration                 21
+2017-06-27 21:38:30.746469 EDT | AverageReturn             19.117
+2017-06-27 21:38:30.746549 EDT | StdReturn                  1.30254
+2017-06-27 21:38:30.746629 EDT | MaxReturn                 23.7502
+2017-06-27 21:38:30.746709 EDT | MinReturn                 15.2241
+2017-06-27 21:38:30.746788 EDT | AverageDiscountedReturn   17.7115
+2017-06-27 21:38:30.746867 EDT | AverageQLoss              11.9918
+2017-06-27 21:38:30.746946 EDT | AveragePolicySurr        -14.2282
+2017-06-27 21:38:30.747024 EDT | AverageQ                  12.1324
+2017-06-27 21:38:30.747103 EDT | AverageAbsQ               12.1949
+2017-06-27 21:38:30.747181 EDT | AverageY                  12.1388
+2017-06-27 21:38:30.747260 EDT | AverageAbsY               12.1459
+2017-06-27 21:38:30.747338 EDT | AverageAbsQYDiff           2.56244
+2017-06-27 21:38:30.747417 EDT | AverageAction              0.314227
+2017-06-27 21:38:30.747495 EDT | PolicyRegParamNorm        43.0443
+2017-06-27 21:38:30.747574 EDT | QFunRegParamNorm          33.1283
+2017-06-27 21:38:30.747761 EDT | -----------------------  ----------
+2017-06-27 21:38:30.747881 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #22 | Training started
 Warning: No valid output stream.
-2017-06-27 16:29:06.591529 EDT | -----------------------  ----------
-2017-06-27 16:29:06.591668 EDT | Epoch                     17
-2017-06-27 16:29:06.591757 EDT | Iteration                 17
-2017-06-27 16:29:06.591842 EDT | AverageReturn              0.875559
-2017-06-27 16:29:06.591926 EDT | StdReturn                  0.376541
-2017-06-27 16:29:06.592008 EDT | MaxReturn                  2.06594
-2017-06-27 16:29:06.592093 EDT | MinReturn                  0.576564
-2017-06-27 16:29:06.592175 EDT | AverageDiscountedReturn    0.920582
-2017-06-27 16:29:06.592258 EDT | AverageQLoss               2.02447
-2017-06-27 16:29:06.592341 EDT | AveragePolicySurr        -10.7737
-2017-06-27 16:29:06.592423 EDT | AverageQ                   6.58662
-2017-06-27 16:29:06.592505 EDT | AverageAbsQ                6.67584
-2017-06-27 16:29:06.592587 EDT | AverageY                   6.59201
-2017-06-27 16:29:06.592670 EDT | AverageAbsY                6.65763
-2017-06-27 16:29:06.592751 EDT | AverageAbsQYDiff           0.992457
-2017-06-27 16:29:06.592833 EDT | AverageAction              0.938388
-2017-06-27 16:29:06.592915 EDT | PolicyRegParamNorm        32.5626
-2017-06-27 16:29:06.592997 EDT | QFunRegParamNorm          23.4394
-2017-06-27 16:29:06.593079 EDT | -----------------------  ----------
-2017-06-27 16:29:06.593203 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #18 | Training started
+Average entropy 0.441836, average std 0.356123
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:41:22.486150 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #22 | Training finished
+2017-06-27 21:41:22.486313 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #22 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:41:22.486410 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #22 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 21:41:34.990694 EDT | -----------------------  ----------
+2017-06-27 21:41:34.990831 EDT | Epoch                     22
+2017-06-27 21:41:34.990917 EDT | Iteration                 22
+2017-06-27 21:41:34.990999 EDT | AverageReturn              4.30281
+2017-06-27 21:41:34.991080 EDT | StdReturn                  0.132584
+2017-06-27 21:41:34.991159 EDT | MaxReturn                  4.65057
+2017-06-27 21:41:34.991237 EDT | MinReturn                  3.92882
+2017-06-27 21:41:34.991316 EDT | AverageDiscountedReturn    4.30081
+2017-06-27 21:41:34.991394 EDT | AverageQLoss              16.6638
+2017-06-27 21:41:34.991472 EDT | AveragePolicySurr        -15.9527
+2017-06-27 21:41:34.991550 EDT | AverageQ                  13.3945
+2017-06-27 21:41:34.991629 EDT | AverageAbsQ               13.4824
+2017-06-27 21:41:34.991707 EDT | AverageY                  13.4033
+2017-06-27 21:41:34.991785 EDT | AverageAbsY               13.4133
+2017-06-27 21:41:34.991864 EDT | AverageAbsQYDiff           3.04379
+2017-06-27 21:41:34.991942 EDT | AverageAction              0.360905
+2017-06-27 21:41:34.992020 EDT | PolicyRegParamNorm        45.4725
+2017-06-27 21:41:34.992098 EDT | QFunRegParamNorm          34.9066
+2017-06-27 21:41:34.992177 EDT | -----------------------  ----------
+2017-06-27 21:41:34.992295 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #23 | Training started
 Warning: No valid output stream.
-Average entropy -3.618158, average std 0.088250
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:29:58.578476 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #18 | Training finished
-2017-06-27 16:29:58.578629 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #18 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:29:58.578725 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #18 | Collecting samples for evaluation
+Average entropy 0.439884, average std 0.355919
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:44:24.881534 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #23 | Training finished
+2017-06-27 21:44:24.881682 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #23 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:44:24.881776 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #23 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:30:10.859889 EDT | -----------------------  ----------
-2017-06-27 16:30:10.860033 EDT | Epoch                     18
-2017-06-27 16:30:10.860133 EDT | Iteration                 18
-2017-06-27 16:30:10.860230 EDT | AverageReturn              1.04863
-2017-06-27 16:30:10.860323 EDT | StdReturn                  0.102938
-2017-06-27 16:30:10.860417 EDT | MaxReturn                  1.30585
-2017-06-27 16:30:10.860508 EDT | MinReturn                  0.783547
-2017-06-27 16:30:10.860597 EDT | AverageDiscountedReturn    1.08924
-2017-06-27 16:30:10.860694 EDT | AverageQLoss               4.19919
-2017-06-27 16:30:10.860783 EDT | AveragePolicySurr        -14.9617
-2017-06-27 16:30:10.860880 EDT | AverageQ                   9.41252
-2017-06-27 16:30:10.860968 EDT | AverageAbsQ                9.52256
-2017-06-27 16:30:10.861066 EDT | AverageY                   9.42012
-2017-06-27 16:30:10.861154 EDT | AverageAbsY                9.4878
-2017-06-27 16:30:10.861249 EDT | AverageAbsQYDiff           1.4225
-2017-06-27 16:30:10.861338 EDT | AverageAction              0.99086
-2017-06-27 16:30:10.861430 EDT | PolicyRegParamNorm        33.4131
-2017-06-27 16:30:10.861519 EDT | QFunRegParamNorm          26.8561
-2017-06-27 16:30:10.861606 EDT | -----------------------  ----------
-2017-06-27 16:30:10.861745 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #19 | Training started
+2017-06-27 21:44:37.347590 EDT | -----------------------  ----------
+2017-06-27 21:44:37.347726 EDT | Epoch                     23
+2017-06-27 21:44:37.347813 EDT | Iteration                 23
+2017-06-27 21:44:37.347895 EDT | AverageReturn              2.21429
+2017-06-27 21:44:37.347974 EDT | StdReturn                  0.107554
+2017-06-27 21:44:37.348054 EDT | MaxReturn                  3.07026
+2017-06-27 21:44:37.348133 EDT | MinReturn                  1.92465
+2017-06-27 21:44:37.348211 EDT | AverageDiscountedReturn    2.30423
+2017-06-27 21:44:37.348290 EDT | AverageQLoss              22.4258
+2017-06-27 21:44:37.348368 EDT | AveragePolicySurr        -17.8384
+2017-06-27 21:44:37.348446 EDT | AverageQ                  14.7755
+2017-06-27 21:44:37.348524 EDT | AverageAbsQ               14.8834
+2017-06-27 21:44:37.348602 EDT | AverageY                  14.7861
+2017-06-27 21:44:37.348680 EDT | AverageAbsY               14.8005
+2017-06-27 21:44:37.348758 EDT | AverageAbsQYDiff           3.54954
+2017-06-27 21:44:37.348835 EDT | AverageAction              0.535121
+2017-06-27 21:44:37.348912 EDT | PolicyRegParamNorm        47.7067
+2017-06-27 21:44:37.348990 EDT | QFunRegParamNorm          36.6996
+2017-06-27 21:44:37.349068 EDT | -----------------------  ----------
+2017-06-27 21:44:37.349186 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #24 | Training started
 Warning: No valid output stream.
-2017-06-27 16:30:18.085228 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #19 | Training finished
-2017-06-27 16:30:18.085381 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #19 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:30:18.085477 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #19 | Collecting samples for evaluation
+Average entropy 0.439591, average std 0.355942
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:47:27.553071 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #24 | Training finished
+2017-06-27 21:47:27.553218 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #24 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:47:27.553314 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #24 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:30:31.011350 EDT | -----------------------  ----------
-2017-06-27 16:30:31.011492 EDT | Epoch                     19
-2017-06-27 16:30:31.011594 EDT | Iteration                 19
-2017-06-27 16:30:31.011703 EDT | AverageReturn              1.05921
-2017-06-27 16:30:31.011793 EDT | StdReturn                  0.114021
-2017-06-27 16:30:31.011891 EDT | MaxReturn                  1.34242
-2017-06-27 16:30:31.011975 EDT | MinReturn                 -0.338714
-2017-06-27 16:30:31.012069 EDT | AverageDiscountedReturn    1.09956
-2017-06-27 16:30:31.012163 EDT | AverageQLoss               8.28618
-2017-06-27 16:30:31.012257 EDT | AveragePolicySurr        -20.0043
-2017-06-27 16:30:31.012352 EDT | AverageQ                  12.8455
-2017-06-27 16:30:31.012446 EDT | AverageAbsQ               12.9768
-2017-06-27 16:30:31.012539 EDT | AverageY                  12.8531
-2017-06-27 16:30:31.012623 EDT | AverageAbsY               12.9249
-2017-06-27 16:30:31.012890 EDT | AverageAbsQYDiff           1.98359
-2017-06-27 16:30:31.012988 EDT | AverageAction              0.996072
-2017-06-27 16:30:31.013084 EDT | PolicyRegParamNorm        34.2793
-2017-06-27 16:30:31.013177 EDT | QFunRegParamNorm          30.5888
-2017-06-27 16:30:31.013269 EDT | -----------------------  ----------
-2017-06-27 16:30:31.013409 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #20 | Training started
+2017-06-27 21:47:40.180971 EDT | -----------------------  ----------
+2017-06-27 21:47:40.181175 EDT | Epoch                     24
+2017-06-27 21:47:40.181311 EDT | Iteration                 24
+2017-06-27 21:47:40.181439 EDT | AverageReturn              3.06617
+2017-06-27 21:47:40.181564 EDT | StdReturn                  0.404732
+2017-06-27 21:47:40.181689 EDT | MaxReturn                  4.1282
+2017-06-27 21:47:40.181813 EDT | MinReturn                  2.22315
+2017-06-27 21:47:40.181936 EDT | AverageDiscountedReturn    3.13207
+2017-06-27 21:47:40.182059 EDT | AverageQLoss              29.6979
+2017-06-27 21:47:40.182183 EDT | AveragePolicySurr        -20.156
+2017-06-27 21:47:40.182317 EDT | AverageQ                  16.4054
+2017-06-27 21:47:40.182444 EDT | AverageAbsQ               16.5304
+2017-06-27 21:47:40.182568 EDT | AverageY                  16.4151
+2017-06-27 21:47:40.182692 EDT | AverageAbsY               16.434
+2017-06-27 21:47:40.182816 EDT | AverageAbsQYDiff           4.09519
+2017-06-27 21:47:40.182940 EDT | AverageAction              0.442137
+2017-06-27 21:47:40.183063 EDT | PolicyRegParamNorm        49.9222
+2017-06-27 21:47:40.183186 EDT | QFunRegParamNorm          38.5238
+2017-06-27 21:47:40.183310 EDT | -----------------------  ----------
+2017-06-27 21:47:40.183490 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #25 | Training started
 Warning: No valid output stream.
+Average entropy 0.440833, average std 0.356007
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:50:30.801130 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #25 | Training finished
+2017-06-27 21:50:30.801278 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #25 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:50:30.801369 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #25 | Collecting samples for evaluation
 Warning: No valid output stream.
-Average entropy -3.619271, average std 0.088270
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:31:25.392846 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #20 | Training finished
-2017-06-27 16:31:25.392998 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #20 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:31:25.393107 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #20 | Collecting samples for evaluation
+2017-06-27 21:50:41.925666 EDT | -----------------------  ----------
+2017-06-27 21:50:41.925805 EDT | Epoch                     25
+2017-06-27 21:50:41.925892 EDT | Iteration                 25
+2017-06-27 21:50:41.925974 EDT | AverageReturn              3.70795
+2017-06-27 21:50:41.926059 EDT | StdReturn                  0.479997
+2017-06-27 21:50:41.926140 EDT | MaxReturn                  5.13571
+2017-06-27 21:50:41.926220 EDT | MinReturn                  3.10523
+2017-06-27 21:50:41.926306 EDT | AverageDiscountedReturn    3.73584
+2017-06-27 21:50:41.926397 EDT | AverageQLoss              39.6335
+2017-06-27 21:50:41.926475 EDT | AveragePolicySurr        -22.7547
+2017-06-27 21:50:41.926552 EDT | AverageQ                  18.2755
+2017-06-27 21:50:41.926629 EDT | AverageAbsQ               18.431
+2017-06-27 21:50:41.926706 EDT | AverageY                  18.2882
+2017-06-27 21:50:41.926784 EDT | AverageAbsY               18.3126
+2017-06-27 21:50:41.926861 EDT | AverageAbsQYDiff           4.76178
+2017-06-27 21:50:41.926938 EDT | AverageAction              0.426321
+2017-06-27 21:50:41.927015 EDT | PolicyRegParamNorm        52.0576
+2017-06-27 21:50:41.927092 EDT | QFunRegParamNorm          40.3659
+2017-06-27 21:50:41.927169 EDT | -----------------------  ----------
+2017-06-27 21:50:41.927288 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #26 | Training started
 Warning: No valid output stream.
-2017-06-27 16:31:37.919571 EDT | -----------------------  -----------
-2017-06-27 16:31:37.919714 EDT | Epoch                     20
-2017-06-27 16:31:37.919817 EDT | Iteration                 20
-2017-06-27 16:31:37.919914 EDT | AverageReturn              0.0800968
-2017-06-27 16:31:37.920004 EDT | StdReturn                  0.110246
-2017-06-27 16:31:37.920098 EDT | MaxReturn                  0.39728
-2017-06-27 16:31:37.920190 EDT | MinReturn                 -0.164184
-2017-06-27 16:31:37.920278 EDT | AverageDiscountedReturn    0.162481
-2017-06-27 16:31:37.920374 EDT | AverageQLoss              15.0556
-2017-06-27 16:31:37.920461 EDT | AveragePolicySurr        -26.1034
-2017-06-27 16:31:37.920558 EDT | AverageQ                  17.1783
-2017-06-27 16:31:37.920650 EDT | AverageAbsQ               17.3365
-2017-06-27 16:31:37.920748 EDT | AverageY                  17.1931
-2017-06-27 16:31:37.920835 EDT | AverageAbsY               17.2664
-2017-06-27 16:31:37.920930 EDT | AverageAbsQYDiff           2.66123
-2017-06-27 16:31:37.921018 EDT | AverageAction              0.972079
-2017-06-27 16:31:37.921107 EDT | PolicyRegParamNorm        34.958
-2017-06-27 16:31:37.921199 EDT | QFunRegParamNorm          34.2169
-2017-06-27 16:31:37.921286 EDT | -----------------------  -----------
-2017-06-27 16:31:37.921425 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #21 | Training started
+Average entropy 0.440023, average std 0.356275
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:53:32.853729 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #26 | Training finished
+2017-06-27 21:53:32.853879 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #26 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:53:32.853970 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #26 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:31:45.141571 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #21 | Training finished
-2017-06-27 16:31:45.141721 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #21 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:31:45.141816 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #21 | Collecting samples for evaluation
+2017-06-27 21:53:45.403500 EDT | -----------------------  ----------
+2017-06-27 21:53:45.403635 EDT | Epoch                     26
+2017-06-27 21:53:45.403722 EDT | Iteration                 26
+2017-06-27 21:53:45.403803 EDT | AverageReturn              3.29215
+2017-06-27 21:53:45.403883 EDT | StdReturn                  0.485795
+2017-06-27 21:53:45.403962 EDT | MaxReturn                  4.60204
+2017-06-27 21:53:45.404040 EDT | MinReturn                  2.69199
+2017-06-27 21:53:45.404119 EDT | AverageDiscountedReturn    3.34013
+2017-06-27 21:53:45.404196 EDT | AverageQLoss              51.7492
+2017-06-27 21:53:45.404274 EDT | AveragePolicySurr        -25.6777
+2017-06-27 21:53:45.404352 EDT | AverageQ                  20.4158
+2017-06-27 21:53:45.404430 EDT | AverageAbsQ               20.6072
+2017-06-27 21:53:45.404508 EDT | AverageY                  20.4333
+2017-06-27 21:53:45.404586 EDT | AverageAbsY               20.4628
+2017-06-27 21:53:45.404664 EDT | AverageAbsQYDiff           5.4663
+2017-06-27 21:53:45.404741 EDT | AverageAction              0.476443
+2017-06-27 21:53:45.404819 EDT | PolicyRegParamNorm        54.1219
+2017-06-27 21:53:45.404897 EDT | QFunRegParamNorm          42.2151
+2017-06-27 21:53:45.404975 EDT | -----------------------  ----------
+2017-06-27 21:53:45.405093 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #27 | Training started
 Warning: No valid output stream.
-2017-06-27 16:31:56.883006 EDT | -----------------------  -----------
-2017-06-27 16:31:56.883145 EDT | Epoch                     21
-2017-06-27 16:31:56.883236 EDT | Iteration                 21
-2017-06-27 16:31:56.883321 EDT | AverageReturn              0.0869353
-2017-06-27 16:31:56.883404 EDT | StdReturn                  0.112034
-2017-06-27 16:31:56.883487 EDT | MaxReturn                  0.419111
-2017-06-27 16:31:56.883569 EDT | MinReturn                 -0.171921
-2017-06-27 16:31:56.883652 EDT | AverageDiscountedReturn    0.16908
-2017-06-27 16:31:56.883733 EDT | AverageQLoss              26.3636
-2017-06-27 16:31:56.883816 EDT | AveragePolicySurr        -32.991
-2017-06-27 16:31:56.883897 EDT | AverageQ                  22.0869
-2017-06-27 16:31:56.883980 EDT | AverageAbsQ               22.2802
-2017-06-27 16:31:56.884062 EDT | AverageY                  22.1042
-2017-06-27 16:31:56.884143 EDT | AverageAbsY               22.1805
-2017-06-27 16:31:56.884226 EDT | AverageAbsQYDiff           3.52615
-2017-06-27 16:31:56.884307 EDT | AverageAction              0.982178
-2017-06-27 16:31:56.884391 EDT | PolicyRegParamNorm        35.4096
-2017-06-27 16:31:56.884472 EDT | QFunRegParamNorm          38.0327
-2017-06-27 16:31:56.884554 EDT | -----------------------  -----------
-2017-06-27 16:31:56.884680 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #22 | Training started
+Average entropy 0.443757, average std 0.356674
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:56:36.113263 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #27 | Training finished
+2017-06-27 21:56:36.113412 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #27 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:56:36.113503 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #27 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 21:56:48.372748 EDT | -----------------------  ----------
+2017-06-27 21:56:48.372883 EDT | Epoch                     27
+2017-06-27 21:56:48.372968 EDT | Iteration                 27
+2017-06-27 21:56:48.373048 EDT | AverageReturn              6.07091
+2017-06-27 21:56:48.373127 EDT | StdReturn                  0.684935
+2017-06-27 21:56:48.373206 EDT | MaxReturn                  7.06234
+2017-06-27 21:56:48.373283 EDT | MinReturn                  5.14559
+2017-06-27 21:56:48.373361 EDT | AverageDiscountedReturn    5.98437
+2017-06-27 21:56:48.373439 EDT | AverageQLoss              70.3273
+2017-06-27 21:56:48.373517 EDT | AveragePolicySurr        -29.4589
+2017-06-27 21:56:48.373594 EDT | AverageQ                  22.9669
+2017-06-27 21:56:48.373675 EDT | AverageAbsQ               23.1862
+2017-06-27 21:56:48.373754 EDT | AverageY                  22.9825
+2017-06-27 21:56:48.373831 EDT | AverageAbsY               23.0169
+2017-06-27 21:56:48.373908 EDT | AverageAbsQYDiff           6.37714
+2017-06-27 21:56:48.373986 EDT | AverageAction              0.294201
+2017-06-27 21:56:48.374064 EDT | PolicyRegParamNorm        55.9551
+2017-06-27 21:56:48.374141 EDT | QFunRegParamNorm          44.3234
+2017-06-27 21:56:48.374219 EDT | -----------------------  ----------
+2017-06-27 21:56:48.374356 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #28 | Training started
 Warning: No valid output stream.
-Average entropy -3.617396, average std 0.088290
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:32:53.599424 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #22 | Training finished
-2017-06-27 16:32:53.599579 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #22 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:32:53.599675 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #22 | Collecting samples for evaluation
+Average entropy 0.442466, average std 0.356536
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 21:59:38.247357 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #28 | Training finished
+2017-06-27 21:59:38.247505 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #28 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 21:59:38.247596 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #28 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:33:05.326351 EDT | -----------------------  -----------
-2017-06-27 16:33:05.326491 EDT | Epoch                     22
-2017-06-27 16:33:05.326592 EDT | Iteration                 22
-2017-06-27 16:33:05.326680 EDT | AverageReturn              0.248612
-2017-06-27 16:33:05.326773 EDT | StdReturn                  0.112789
-2017-06-27 16:33:05.326860 EDT | MaxReturn                  0.527969
-2017-06-27 16:33:05.326948 EDT | MinReturn                 -0.0736049
-2017-06-27 16:33:05.327035 EDT | AverageDiscountedReturn    0.32577
-2017-06-27 16:33:05.327122 EDT | AverageQLoss              42.4819
-2017-06-27 16:33:05.327211 EDT | AveragePolicySurr        -40.8957
-2017-06-27 16:33:05.327297 EDT | AverageQ                  27.9237
-2017-06-27 16:33:05.327382 EDT | AverageAbsQ               28.151
-2017-06-27 16:33:05.327469 EDT | AverageY                  27.946
-2017-06-27 16:33:05.327556 EDT | AverageAbsY               28.0237
-2017-06-27 16:33:05.327653 EDT | AverageAbsQYDiff           4.45008
-2017-06-27 16:33:05.327801 EDT | AverageAction              1
-2017-06-27 16:33:05.327887 EDT | PolicyRegParamNorm        37.0589
-2017-06-27 16:33:05.327979 EDT | QFunRegParamNorm          41.6206
-2017-06-27 16:33:05.328066 EDT | -----------------------  -----------
-2017-06-27 16:33:05.328195 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #23 | Training started
+2017-06-27 21:59:50.243480 EDT | -----------------------  ----------
+2017-06-27 21:59:50.243615 EDT | Epoch                     28
+2017-06-27 21:59:50.243704 EDT | Iteration                 28
+2017-06-27 21:59:50.243785 EDT | AverageReturn              7.45878
+2017-06-27 21:59:50.243865 EDT | StdReturn                  1.64092
+2017-06-27 21:59:50.243944 EDT | MaxReturn                 11.7558
+2017-06-27 21:59:50.244022 EDT | MinReturn                  5.40509
+2017-06-27 21:59:50.244100 EDT | AverageDiscountedReturn    7.28624
+2017-06-27 21:59:50.244178 EDT | AverageQLoss              96.7844
+2017-06-27 21:59:50.244256 EDT | AveragePolicySurr        -33.3494
+2017-06-27 21:59:50.244335 EDT | AverageQ                  25.8633
+2017-06-27 21:59:50.244413 EDT | AverageAbsQ               26.1408
+2017-06-27 21:59:50.244491 EDT | AverageY                  25.8868
+2017-06-27 21:59:50.244569 EDT | AverageAbsY               25.932
+2017-06-27 21:59:50.244646 EDT | AverageAbsQYDiff           7.52285
+2017-06-27 21:59:50.244724 EDT | AverageAction              0.301581
+2017-06-27 21:59:50.244802 EDT | PolicyRegParamNorm        57.9413
+2017-06-27 21:59:50.244880 EDT | QFunRegParamNorm          46.3454
+2017-06-27 21:59:50.244958 EDT | -----------------------  ----------
+2017-06-27 21:59:50.245076 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #29 | Training started
 Warning: No valid output stream.
-2017-06-27 16:33:12.520114 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #23 | Training finished
-2017-06-27 16:33:12.520264 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #23 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:33:12.520372 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #23 | Collecting samples for evaluation
+Average entropy 0.438688, average std 0.356342
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 22:02:40.863805 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #29 | Training finished
+2017-06-27 22:02:40.863950 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #29 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:02:40.864040 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #29 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:33:24.735001 EDT | -----------------------  -----------
-2017-06-27 16:33:24.735140 EDT | Epoch                     23
-2017-06-27 16:33:24.735239 EDT | Iteration                 23
-2017-06-27 16:33:24.735329 EDT | AverageReturn              0.255288
-2017-06-27 16:33:24.735418 EDT | StdReturn                  0.11453
-2017-06-27 16:33:24.735505 EDT | MaxReturn                  0.522689
-2017-06-27 16:33:24.735594 EDT | MinReturn                 -0.0636952
-2017-06-27 16:33:24.735680 EDT | AverageDiscountedReturn    0.332307
-2017-06-27 16:33:24.735769 EDT | AverageQLoss              67.3408
-2017-06-27 16:33:24.735855 EDT | AveragePolicySurr        -49.6704
-2017-06-27 16:33:24.735941 EDT | AverageQ                  34.4564
-2017-06-27 16:33:24.736027 EDT | AverageAbsQ               34.7149
-2017-06-27 16:33:24.736112 EDT | AverageY                  34.4762
-2017-06-27 16:33:24.736200 EDT | AverageAbsY               34.5557
-2017-06-27 16:33:24.736285 EDT | AverageAbsQYDiff           5.58238
-2017-06-27 16:33:24.736372 EDT | AverageAction              1
-2017-06-27 16:33:24.736458 EDT | PolicyRegParamNorm        37.5635
-2017-06-27 16:33:24.736543 EDT | QFunRegParamNorm          45.3856
-2017-06-27 16:33:24.736629 EDT | -----------------------  -----------
-2017-06-27 16:33:24.736824 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #24 | Training started
+2017-06-27 22:02:52.941314 EDT | -----------------------  ----------
+2017-06-27 22:02:52.941447 EDT | Epoch                     29
+2017-06-27 22:02:52.941532 EDT | Iteration                 29
+2017-06-27 22:02:52.941612 EDT | AverageReturn              4.79115
+2017-06-27 22:02:52.941692 EDT | StdReturn                  0.362138
+2017-06-27 22:02:52.941770 EDT | MaxReturn                  5.59802
+2017-06-27 22:02:52.941848 EDT | MinReturn                  4.14036
+2017-06-27 22:02:52.941925 EDT | AverageDiscountedReturn    4.74073
+2017-06-27 22:02:52.942003 EDT | AverageQLoss             128.185
+2017-06-27 22:02:52.942081 EDT | AveragePolicySurr        -37.7615
+2017-06-27 22:02:52.942159 EDT | AverageQ                  29.0769
+2017-06-27 22:02:52.942237 EDT | AverageAbsQ               29.3885
+2017-06-27 22:02:52.942322 EDT | AverageY                  29.0968
+2017-06-27 22:02:52.942400 EDT | AverageAbsY               29.1479
+2017-06-27 22:02:52.942477 EDT | AverageAbsQYDiff           8.68306
+2017-06-27 22:02:52.942555 EDT | AverageAction              0.35742
+2017-06-27 22:02:52.942633 EDT | PolicyRegParamNorm        59.7664
+2017-06-27 22:02:52.942713 EDT | QFunRegParamNorm          48.41
+2017-06-27 22:02:52.942791 EDT | -----------------------  ----------
+2017-06-27 22:02:52.942910 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #30 | Training started
 Warning: No valid output stream.
+Average entropy 0.440655, average std 0.356476
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 22:05:43.056802 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #30 | Training finished
+2017-06-27 22:05:43.056950 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #30 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:05:43.057041 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #30 | Collecting samples for evaluation
 Warning: No valid output stream.
-Average entropy -3.629931, average std 0.088138
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:34:23.485739 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #24 | Training finished
-2017-06-27 16:34:23.485891 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #24 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:34:23.485987 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #24 | Collecting samples for evaluation
+2017-06-27 22:05:53.272260 EDT | -----------------------  ----------
+2017-06-27 22:05:53.272397 EDT | Epoch                     30
+2017-06-27 22:05:53.272483 EDT | Iteration                 30
+2017-06-27 22:05:53.272565 EDT | AverageReturn              8.06995
+2017-06-27 22:05:53.272647 EDT | StdReturn                  0.444789
+2017-06-27 22:05:53.272728 EDT | MaxReturn                  9.07544
+2017-06-27 22:05:53.272807 EDT | MinReturn                  7.05596
+2017-06-27 22:05:53.272886 EDT | AverageDiscountedReturn    7.87301
+2017-06-27 22:05:53.272965 EDT | AverageQLoss             166.503
+2017-06-27 22:05:53.273044 EDT | AveragePolicySurr        -42.6227
+2017-06-27 22:05:53.273123 EDT | AverageQ                  32.739
+2017-06-27 22:05:53.273202 EDT | AverageAbsQ               33.0883
+2017-06-27 22:05:53.273280 EDT | AverageY                  32.7714
+2017-06-27 22:05:53.273359 EDT | AverageAbsY               32.8237
+2017-06-27 22:05:53.273437 EDT | AverageAbsQYDiff           9.89856
+2017-06-27 22:05:53.273515 EDT | AverageAction              0.26928
+2017-06-27 22:05:53.273593 EDT | PolicyRegParamNorm        61.5451
+2017-06-27 22:05:53.273746 EDT | QFunRegParamNorm          50.4711
+2017-06-27 22:05:53.273825 EDT | -----------------------  ----------
+2017-06-27 22:05:53.273946 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #31 | Training started
 Warning: No valid output stream.
-2017-06-27 16:34:34.804600 EDT | -----------------------  -----------
-2017-06-27 16:34:34.804740 EDT | Epoch                     24
-2017-06-27 16:34:34.804831 EDT | Iteration                 24
-2017-06-27 16:34:34.804924 EDT | AverageReturn              0.251434
-2017-06-27 16:34:34.805009 EDT | StdReturn                  0.116494
-2017-06-27 16:34:34.805092 EDT | MaxReturn                  0.576007
-2017-06-27 16:34:34.805190 EDT | MinReturn                 -0.0443305
-2017-06-27 16:34:34.805274 EDT | AverageDiscountedReturn    0.327828
-2017-06-27 16:34:34.805366 EDT | AverageQLoss             102.593
-2017-06-27 16:34:34.805450 EDT | AveragePolicySurr        -59.4919
-2017-06-27 16:34:34.805534 EDT | AverageQ                  41.8394
-2017-06-27 16:34:34.805626 EDT | AverageAbsQ               42.1391
-2017-06-27 16:34:34.805708 EDT | AverageY                  41.8748
-2017-06-27 16:34:34.805800 EDT | AverageAbsY               41.956
-2017-06-27 16:34:34.805882 EDT | AverageAbsQYDiff           6.86084
-2017-06-27 16:34:34.805971 EDT | AverageAction              0.985695
-2017-06-27 16:34:34.806056 EDT | PolicyRegParamNorm        37.794
-2017-06-27 16:34:34.806139 EDT | QFunRegParamNorm          48.9435
-2017-06-27 16:34:34.806231 EDT | -----------------------  -----------
-2017-06-27 16:34:34.806373 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #25 | Training started
+Average entropy 0.450027, average std 0.359670
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 22:08:45.008091 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #31 | Training finished
+2017-06-27 22:08:45.008238 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #31 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:08:45.008327 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #31 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:34:42.049603 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #25 | Training finished
-2017-06-27 16:34:42.049755 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #25 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:34:42.049865 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #25 | Collecting samples for evaluation
+2017-06-27 22:08:56.622516 EDT | -----------------------  ----------
+2017-06-27 22:08:56.622652 EDT | Epoch                     31
+2017-06-27 22:08:56.622738 EDT | Iteration                 31
+2017-06-27 22:08:56.622819 EDT | AverageReturn              6.46514
+2017-06-27 22:08:56.622898 EDT | StdReturn                  1.08927
+2017-06-27 22:08:56.622977 EDT | MaxReturn                  9.80882
+2017-06-27 22:08:56.623055 EDT | MinReturn                  5.08055
+2017-06-27 22:08:56.623133 EDT | AverageDiscountedReturn    6.34205
+2017-06-27 22:08:56.623212 EDT | AverageQLoss             217.54
+2017-06-27 22:08:56.623290 EDT | AveragePolicySurr        -47.8729
+2017-06-27 22:08:56.623367 EDT | AverageQ                  36.6424
+2017-06-27 22:08:56.623445 EDT | AverageAbsQ               37.062
+2017-06-27 22:08:56.623522 EDT | AverageY                  36.6773
+2017-06-27 22:08:56.623599 EDT | AverageAbsY               36.7344
+2017-06-27 22:08:56.623677 EDT | AverageAbsQYDiff          11.3607
+2017-06-27 22:08:56.623754 EDT | AverageAction              0.299639
+2017-06-27 22:08:56.623832 EDT | PolicyRegParamNorm        63.2267
+2017-06-27 22:08:56.623909 EDT | QFunRegParamNorm          52.571
+2017-06-27 22:08:56.623986 EDT | -----------------------  ----------
+2017-06-27 22:08:56.624104 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #32 | Training started
 Warning: No valid output stream.
-2017-06-27 16:34:52.670303 EDT | -----------------------  -----------
-2017-06-27 16:34:52.670442 EDT | Epoch                     25
-2017-06-27 16:34:52.670532 EDT | Iteration                 25
-2017-06-27 16:34:52.670619 EDT | AverageReturn              0.256511
-2017-06-27 16:34:52.670702 EDT | StdReturn                  0.117206
-2017-06-27 16:34:52.670786 EDT | MaxReturn                  0.520206
-2017-06-27 16:34:52.670869 EDT | MinReturn                 -0.0532497
-2017-06-27 16:34:52.670951 EDT | AverageDiscountedReturn    0.332783
-2017-06-27 16:34:52.671034 EDT | AverageQLoss             155.209
-2017-06-27 16:34:52.671115 EDT | AveragePolicySurr        -69.8367
-2017-06-27 16:34:52.671197 EDT | AverageQ                  49.7141
-2017-06-27 16:34:52.671280 EDT | AverageAbsQ               50.0632
-2017-06-27 16:34:52.671362 EDT | AverageY                  49.7419
-2017-06-27 16:34:52.671444 EDT | AverageAbsY               49.8258
-2017-06-27 16:34:52.671526 EDT | AverageAbsQYDiff           8.44248
-2017-06-27 16:34:52.671609 EDT | AverageAction              0.987485
-2017-06-27 16:34:52.671690 EDT | PolicyRegParamNorm        37.8038
-2017-06-27 16:34:52.671772 EDT | QFunRegParamNorm          52.4073
-2017-06-27 16:34:52.671854 EDT | -----------------------  -----------
-2017-06-27 16:34:52.671979 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #26 | Training started
+Average entropy 0.454496, average std 0.360897
+Path length stats min 5 max 45 mean 23 std 10
+2017-06-27 22:11:46.532409 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #32 | Training finished
+2017-06-27 22:11:46.532556 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #32 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:11:46.532652 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #32 | Collecting samples for evaluation
 Warning: No valid output stream.
+2017-06-27 22:11:57.837058 EDT | -----------------------  ----------
+2017-06-27 22:11:57.837195 EDT | Epoch                     32
+2017-06-27 22:11:57.837281 EDT | Iteration                 32
+2017-06-27 22:11:57.837363 EDT | AverageReturn             18.382
+2017-06-27 22:11:57.837443 EDT | StdReturn                 17.4798
+2017-06-27 22:11:57.837523 EDT | MaxReturn                 59.1827
+2017-06-27 22:11:57.837605 EDT | MinReturn                  5.98587
+2017-06-27 22:11:57.837684 EDT | AverageDiscountedReturn   17.1581
+2017-06-27 22:11:57.837762 EDT | AverageQLoss             270.176
+2017-06-27 22:11:57.837840 EDT | AveragePolicySurr        -53.4377
+2017-06-27 22:11:57.837919 EDT | AverageQ                  40.9283
+2017-06-27 22:11:57.837997 EDT | AverageAbsQ               41.4105
+2017-06-27 22:11:57.838075 EDT | AverageY                  40.9602
+2017-06-27 22:11:57.838153 EDT | AverageAbsY               41.0214
+2017-06-27 22:11:57.838230 EDT | AverageAbsQYDiff          12.6497
+2017-06-27 22:11:57.838320 EDT | AverageAction              0.465475
+2017-06-27 22:11:57.838399 EDT | PolicyRegParamNorm        64.8034
+2017-06-27 22:11:57.838477 EDT | QFunRegParamNorm          54.7305
+2017-06-27 22:11:57.838556 EDT | -----------------------  ----------
+2017-06-27 22:11:57.838675 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #33 | Training started
 Warning: No valid output stream.
-Average entropy -3.627704, average std 0.088185
-Path length stats min 7 max 32 mean 20 std 10
-2017-06-27 16:35:53.576821 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #26 | Training finished
-2017-06-27 16:35:53.576971 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #26 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:35:53.577062 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #26 | Collecting samples for evaluation
+Average entropy 0.457380, average std 0.361980
+Path length stats min 5 max 51 mean 23 std 10
+2017-06-27 22:14:51.564247 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #33 | Training finished
+2017-06-27 22:14:51.564395 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #33 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:14:51.564487 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #33 | Collecting samples for evaluation
 Warning: No valid output stream.
-2017-06-27 16:36:05.401169 EDT | -----------------------  -----------
-2017-06-27 16:36:05.401306 EDT | Epoch                     26
-2017-06-27 16:36:05.401396 EDT | Iteration                 26
-2017-06-27 16:36:05.401479 EDT | AverageReturn              0.25342
-2017-06-27 16:36:05.401562 EDT | StdReturn                  0.117294
-2017-06-27 16:36:05.401644 EDT | MaxReturn                  0.535138
-2017-06-27 16:36:05.401727 EDT | MinReturn                 -0.0395558
-2017-06-27 16:36:05.401808 EDT | AverageDiscountedReturn    0.329749
-2017-06-27 16:36:05.401889 EDT | AverageQLoss             225.711
-2017-06-27 16:36:05.401973 EDT | AveragePolicySurr        -81.6937
-2017-06-27 16:36:05.402055 EDT | AverageQ                  58.8652
-2017-06-27 16:36:05.402136 EDT | AverageAbsQ               59.2586
-2017-06-27 16:36:05.402217 EDT | AverageY                  58.9172
-2017-06-27 16:36:05.402303 EDT | AverageAbsY               59.0025
-2017-06-27 16:36:05.402385 EDT | AverageAbsQYDiff          10.1885
-2017-06-27 16:36:05.402466 EDT | AverageAction              0.988518
-2017-06-27 16:36:05.402547 EDT | PolicyRegParamNorm        37.8113
-2017-06-27 16:36:05.402627 EDT | QFunRegParamNorm          55.738
-2017-06-27 16:36:05.402708 EDT | -----------------------  -----------
-2017-06-27 16:36:05.402830 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #27 | Training started
+2017-06-27 22:15:02.811444 EDT | -----------------------  ---------
+2017-06-27 22:15:02.811579 EDT | Epoch                     33
+2017-06-27 22:15:02.811666 EDT | Iteration                 33
+2017-06-27 22:15:02.811748 EDT | AverageReturn             46.1844
+2017-06-27 22:15:02.811829 EDT | StdReturn                 57.1432
+2017-06-27 22:15:02.811909 EDT | MaxReturn                149.512
+2017-06-27 22:15:02.811989 EDT | MinReturn                  6.94547
+2017-06-27 22:15:02.812070 EDT | AverageDiscountedReturn   38.7973
+2017-06-27 22:15:02.812149 EDT | AverageQLoss             343.592
+2017-06-27 22:15:02.812228 EDT | AveragePolicySurr        -60.0726
+2017-06-27 22:15:02.812308 EDT | AverageQ                  45.6358
+2017-06-27 22:15:02.812387 EDT | AverageAbsQ               46.1756
+2017-06-27 22:15:02.812466 EDT | AverageY                  45.666
+2017-06-27 22:15:02.812545 EDT | AverageAbsY               45.7342
+2017-06-27 22:15:02.812623 EDT | AverageAbsQYDiff          14.2872
+2017-06-27 22:15:02.812773 EDT | AverageAction              0.52629
+2017-06-27 22:15:02.812856 EDT | PolicyRegParamNorm        66.359
+2017-06-27 22:15:02.812936 EDT | QFunRegParamNorm          56.8525
+2017-06-27 22:15:02.813016 EDT | -----------------------  ---------
+2017-06-27 22:15:02.813135 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #34 | Training started
 Warning: No valid output stream.
-2017-06-27 16:36:12.526310 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #27 | Training finished
-2017-06-27 16:36:12.526457 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #27 | Trained qf 1000 steps, policy 1000 steps
-2017-06-27 16:36:12.526548 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_16_21_22_0001] epoch #27 | Collecting samples for evaluation
+Average entropy 0.476511, average std 0.367994
+Path length stats min 5 max 49 mean 23 std 10
+2017-06-27 22:17:56.631143 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #34 | Training finished
+2017-06-27 22:17:56.631292 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #34 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:17:56.631381 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #34 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:18:07.361148 EDT | -----------------------  ----------
+2017-06-27 22:18:07.361280 EDT | Epoch                     34
+2017-06-27 22:18:07.361365 EDT | Iteration                 34
+2017-06-27 22:18:07.361446 EDT | AverageReturn             27.8184
+2017-06-27 22:18:07.361530 EDT | StdReturn                 21.5876
+2017-06-27 22:18:07.361610 EDT | MaxReturn                124.017
+2017-06-27 22:18:07.361688 EDT | MinReturn                  7.30259
+2017-06-27 22:18:07.361767 EDT | AverageDiscountedReturn   25.6186
+2017-06-27 22:18:07.361847 EDT | AverageQLoss             434.461
+2017-06-27 22:18:07.361926 EDT | AveragePolicySurr        -66.5908
+2017-06-27 22:18:07.362004 EDT | AverageQ                  50.5486
+2017-06-27 22:18:07.362081 EDT | AverageAbsQ               51.1844
+2017-06-27 22:18:07.362158 EDT | AverageY                  50.5955
+2017-06-27 22:18:07.362236 EDT | AverageAbsY               50.6746
+2017-06-27 22:18:07.362325 EDT | AverageAbsQYDiff          16.1011
+2017-06-27 22:18:07.362403 EDT | AverageAction              0.516967
+2017-06-27 22:18:07.362481 EDT | PolicyRegParamNorm        67.8927
+2017-06-27 22:18:07.362558 EDT | QFunRegParamNorm          59.0476
+2017-06-27 22:18:07.362635 EDT | -----------------------  ----------
+2017-06-27 22:18:07.362753 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #35 | Training started
+Warning: No valid output stream.
+Average entropy 0.506275, average std 0.374095
+Path length stats min 2 max 70 mean 23 std 10
+2017-06-27 22:20:59.743867 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #35 | Training finished
+2017-06-27 22:20:59.744015 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #35 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:20:59.744104 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #35 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:21:10.596210 EDT | -----------------------  ----------
+2017-06-27 22:21:10.596345 EDT | Epoch                     35
+2017-06-27 22:21:10.596432 EDT | Iteration                 35
+2017-06-27 22:21:10.596513 EDT | AverageReturn             27.6263
+2017-06-27 22:21:10.596593 EDT | StdReturn                 22.5194
+2017-06-27 22:21:10.596673 EDT | MaxReturn                 95.2997
+2017-06-27 22:21:10.596752 EDT | MinReturn                  7.51204
+2017-06-27 22:21:10.596831 EDT | AverageDiscountedReturn   25.4757
+2017-06-27 22:21:10.596910 EDT | AverageQLoss             536.729
+2017-06-27 22:21:10.596989 EDT | AveragePolicySurr        -74.4707
+2017-06-27 22:21:10.597068 EDT | AverageQ                  56.521
+2017-06-27 22:21:10.597146 EDT | AverageAbsQ               57.1796
+2017-06-27 22:21:10.597225 EDT | AverageY                  56.5628
+2017-06-27 22:21:10.597303 EDT | AverageAbsY               56.645
+2017-06-27 22:21:10.597381 EDT | AverageAbsQYDiff          17.9338
+2017-06-27 22:21:10.597459 EDT | AverageAction              0.588066
+2017-06-27 22:21:10.597537 EDT | PolicyRegParamNorm        69.3157
+2017-06-27 22:21:10.597615 EDT | QFunRegParamNorm          61.2647
+2017-06-27 22:21:10.597693 EDT | -----------------------  ----------
+2017-06-27 22:21:10.597813 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #36 | Training started
+Warning: No valid output stream.
+Average entropy 0.511833, average std 0.378439
+Path length stats min 2 max 70 mean 23 std 10
+2017-06-27 22:24:02.338445 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #36 | Training finished
+2017-06-27 22:24:02.338594 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #36 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:24:02.338685 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #36 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:24:13.055629 EDT | -----------------------  ----------
+2017-06-27 22:24:13.055765 EDT | Epoch                     36
+2017-06-27 22:24:13.055851 EDT | Iteration                 36
+2017-06-27 22:24:13.055932 EDT | AverageReturn             18.6453
+2017-06-27 22:24:13.056012 EDT | StdReturn                 18.044
+2017-06-27 22:24:13.056091 EDT | MaxReturn                 51.4882
+2017-06-27 22:24:13.056170 EDT | MinReturn                  6.21251
+2017-06-27 22:24:13.056248 EDT | AverageDiscountedReturn   17.4591
+2017-06-27 22:24:13.056326 EDT | AverageQLoss             667.724
+2017-06-27 22:24:13.056404 EDT | AveragePolicySurr        -81.7283
+2017-06-27 22:24:13.056484 EDT | AverageQ                  62.4243
+2017-06-27 22:24:13.056567 EDT | AverageAbsQ               63.2133
+2017-06-27 22:24:13.056646 EDT | AverageY                  62.4642
+2017-06-27 22:24:13.056724 EDT | AverageAbsY               62.5604
+2017-06-27 22:24:13.056802 EDT | AverageAbsQYDiff          19.9264
+2017-06-27 22:24:13.056879 EDT | AverageAction              0.522839
+2017-06-27 22:24:13.056957 EDT | PolicyRegParamNorm        70.7419
+2017-06-27 22:24:13.057035 EDT | QFunRegParamNorm          63.2829
+2017-06-27 22:24:13.057112 EDT | -----------------------  ----------
+2017-06-27 22:24:13.057231 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #37 | Training started
+Warning: No valid output stream.
+Average entropy 0.517507, average std 0.380512
+Path length stats min 2 max 70 mean 23 std 10
+2017-06-27 22:27:03.441501 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #37 | Training finished
+2017-06-27 22:27:03.441649 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #37 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:27:03.441740 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #37 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:27:15.827629 EDT | -----------------------  ----------
+2017-06-27 22:27:15.827763 EDT | Epoch                     37
+2017-06-27 22:27:15.827848 EDT | Iteration                 37
+2017-06-27 22:27:15.827929 EDT | AverageReturn             16.6475
+2017-06-27 22:27:15.828009 EDT | StdReturn                 17.3746
+2017-06-27 22:27:15.828089 EDT | MaxReturn                 55.2764
+2017-06-27 22:27:15.828167 EDT | MinReturn                  5.38912
+2017-06-27 22:27:15.828246 EDT | AverageDiscountedReturn   15.6103
+2017-06-27 22:27:15.828325 EDT | AverageQLoss             799.808
+2017-06-27 22:27:15.828403 EDT | AveragePolicySurr        -89.1619
+2017-06-27 22:27:15.828482 EDT | AverageQ                  68.4208
+2017-06-27 22:27:15.828560 EDT | AverageAbsQ               69.2829
+2017-06-27 22:27:15.828639 EDT | AverageY                  68.4856
+2017-06-27 22:27:15.828717 EDT | AverageAbsY               68.5904
+2017-06-27 22:27:15.828795 EDT | AverageAbsQYDiff          21.8258
+2017-06-27 22:27:15.828873 EDT | AverageAction              0.539048
+2017-06-27 22:27:15.828951 EDT | PolicyRegParamNorm        72.1168
+2017-06-27 22:27:15.829028 EDT | QFunRegParamNorm          65.3818
+2017-06-27 22:27:15.829106 EDT | -----------------------  ----------
+2017-06-27 22:27:15.829225 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #38 | Training started
+Warning: No valid output stream.
+Average entropy 0.536728, average std 0.385173
+Path length stats min 2 max 70 mean 22 std 10
+2017-06-27 22:30:08.671950 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #38 | Training finished
+2017-06-27 22:30:08.672095 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #38 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:30:08.672184 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #38 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:30:19.713845 EDT | -----------------------  ----------
+2017-06-27 22:30:19.713982 EDT | Epoch                     38
+2017-06-27 22:30:19.714069 EDT | Iteration                 38
+2017-06-27 22:30:19.714151 EDT | AverageReturn             18.0688
+2017-06-27 22:30:19.714231 EDT | StdReturn                 15.2028
+2017-06-27 22:30:19.714319 EDT | MaxReturn                 55.8764
+2017-06-27 22:30:19.714399 EDT | MinReturn                  4.85804
+2017-06-27 22:30:19.714479 EDT | AverageDiscountedReturn   17.0397
+2017-06-27 22:30:19.714558 EDT | AverageQLoss             964.736
+2017-06-27 22:30:19.714637 EDT | AveragePolicySurr        -97.2294
+2017-06-27 22:30:19.714715 EDT | AverageQ                  74.8908
+2017-06-27 22:30:19.714795 EDT | AverageAbsQ               75.8055
+2017-06-27 22:30:19.714877 EDT | AverageY                  74.9479
+2017-06-27 22:30:19.714957 EDT | AverageAbsY               75.0723
+2017-06-27 22:30:19.715036 EDT | AverageAbsQYDiff          23.9757
+2017-06-27 22:30:19.715115 EDT | AverageAction              0.627475
+2017-06-27 22:30:19.715195 EDT | PolicyRegParamNorm        73.4615
+2017-06-27 22:30:19.715277 EDT | QFunRegParamNorm          67.5077
+2017-06-27 22:30:19.715356 EDT | -----------------------  ----------
+2017-06-27 22:30:19.715477 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #39 | Training started
+Warning: No valid output stream.
+Average entropy 0.504847, average std 0.386598
+Path length stats min 2 max 70 mean 22 std 10
+2017-06-27 22:33:11.809023 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #39 | Training finished
+2017-06-27 22:33:11.809177 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #39 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:33:11.809281 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #39 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:33:21.736367 EDT | -----------------------  -----------
+2017-06-27 22:33:21.736502 EDT | Epoch                      39
+2017-06-27 22:33:21.736591 EDT | Iteration                  39
+2017-06-27 22:33:21.736673 EDT | AverageReturn              14.6087
+2017-06-27 22:33:21.736756 EDT | StdReturn                  13.9744
+2017-06-27 22:33:21.736837 EDT | MaxReturn                  59.3251
+2017-06-27 22:33:21.736917 EDT | MinReturn                   5.54269
+2017-06-27 22:33:21.736998 EDT | AverageDiscountedReturn    13.8349
+2017-06-27 22:33:21.737077 EDT | AverageQLoss             1134.5
+2017-06-27 22:33:21.737157 EDT | AveragePolicySurr        -104.12
+2017-06-27 22:33:21.737238 EDT | AverageQ                   80.9778
+2017-06-27 22:33:21.737318 EDT | AverageAbsQ                81.9928
+2017-06-27 22:33:21.737398 EDT | AverageY                   81.0399
+2017-06-27 22:33:21.737478 EDT | AverageAbsY                81.1779
+2017-06-27 22:33:21.737558 EDT | AverageAbsQYDiff           25.9349
+2017-06-27 22:33:21.737638 EDT | AverageAction               0.531853
+2017-06-27 22:33:21.737717 EDT | PolicyRegParamNorm         74.7553
+2017-06-27 22:33:21.737797 EDT | QFunRegParamNorm           69.6084
+2017-06-27 22:33:21.737876 EDT | -----------------------  -----------
+2017-06-27 22:33:21.737996 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #40 | Training started
+Warning: No valid output stream.
+Average entropy 0.554245, average std 0.391387
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:36:13.093733 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #40 | Training finished
+2017-06-27 22:36:13.093886 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #40 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:36:13.093979 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #40 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:36:25.184450 EDT | -----------------------  -----------
+2017-06-27 22:36:25.184589 EDT | Epoch                      40
+2017-06-27 22:36:25.184678 EDT | Iteration                  40
+2017-06-27 22:36:25.184761 EDT | AverageReturn              27.8011
+2017-06-27 22:36:25.184853 EDT | StdReturn                  11.7324
+2017-06-27 22:36:25.184934 EDT | MaxReturn                  56.4321
+2017-06-27 22:36:25.185019 EDT | MinReturn                   6.32918
+2017-06-27 22:36:25.185108 EDT | AverageDiscountedReturn    26.0635
+2017-06-27 22:36:25.185189 EDT | AverageQLoss             1295.6
+2017-06-27 22:36:25.185280 EDT | AveragePolicySurr        -110.222
+2017-06-27 22:36:25.185361 EDT | AverageQ                   86.5429
+2017-06-27 22:36:25.185452 EDT | AverageAbsQ                87.638
+2017-06-27 22:36:25.185533 EDT | AverageY                   86.5951
+2017-06-27 22:36:25.185613 EDT | AverageAbsY                86.7635
+2017-06-27 22:36:25.185717 EDT | AverageAbsQYDiff           27.7269
+2017-06-27 22:36:25.185799 EDT | AverageAction               0.656309
+2017-06-27 22:36:25.185891 EDT | PolicyRegParamNorm         76.2003
+2017-06-27 22:36:25.185971 EDT | QFunRegParamNorm           71.6601
+2017-06-27 22:36:25.186058 EDT | -----------------------  -----------
+2017-06-27 22:36:25.186182 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #41 | Training started
+Warning: No valid output stream.
+Average entropy 0.536795, average std 0.392379
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:39:19.253456 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #41 | Training finished
+2017-06-27 22:39:19.253612 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #41 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:39:19.253722 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #41 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:39:31.496672 EDT | -----------------------  -----------
+2017-06-27 22:39:31.496875 EDT | Epoch                      41
+2017-06-27 22:39:31.497025 EDT | Iteration                  41
+2017-06-27 22:39:31.497163 EDT | AverageReturn               9.36485
+2017-06-27 22:39:31.497300 EDT | StdReturn                   5.66918
+2017-06-27 22:39:31.497434 EDT | MaxReturn                  29.0198
+2017-06-27 22:39:31.497568 EDT | MinReturn                   4.92062
+2017-06-27 22:39:31.497701 EDT | AverageDiscountedReturn     9.03513
+2017-06-27 22:39:31.497834 EDT | AverageQLoss             1465.26
+2017-06-27 22:39:31.497966 EDT | AveragePolicySurr        -116.563
+2017-06-27 22:39:31.498099 EDT | AverageQ                   91.6494
+2017-06-27 22:39:31.498232 EDT | AverageAbsQ                92.8606
+2017-06-27 22:39:31.498380 EDT | AverageY                   91.6887
+2017-06-27 22:39:31.498513 EDT | AverageAbsY                91.8873
+2017-06-27 22:39:31.498647 EDT | AverageAbsQYDiff           29.4355
+2017-06-27 22:39:31.498778 EDT | AverageAction               0.455667
+2017-06-27 22:39:31.498911 EDT | PolicyRegParamNorm         77.4227
+2017-06-27 22:39:31.499043 EDT | QFunRegParamNorm           73.613
+2017-06-27 22:39:31.499174 EDT | -----------------------  -----------
+2017-06-27 22:39:31.499355 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #42 | Training started
+Warning: No valid output stream.
+Average entropy 0.590193, average std 0.397204
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:42:20.950387 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #42 | Training finished
+2017-06-27 22:42:20.950538 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #42 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:42:20.950633 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #42 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:42:32.313925 EDT | -----------------------  -----------
+2017-06-27 22:42:32.314065 EDT | Epoch                      42
+2017-06-27 22:42:32.314165 EDT | Iteration                  42
+2017-06-27 22:42:32.314256 EDT | AverageReturn               6.73402
+2017-06-27 22:42:32.314352 EDT | StdReturn                   6.5305
+2017-06-27 22:42:32.314442 EDT | MaxReturn                  57.9528
+2017-06-27 22:42:32.314530 EDT | MinReturn                   5.1806
+2017-06-27 22:42:32.314619 EDT | AverageDiscountedReturn     6.53948
+2017-06-27 22:42:32.314706 EDT | AverageQLoss             1640.45
+2017-06-27 22:42:32.314795 EDT | AveragePolicySurr        -122.85
+2017-06-27 22:42:32.314882 EDT | AverageQ                   96.9603
+2017-06-27 22:42:32.314970 EDT | AverageAbsQ                98.267
+2017-06-27 22:42:32.315057 EDT | AverageY                   97.0011
+2017-06-27 22:42:32.315143 EDT | AverageAbsY                97.2321
+2017-06-27 22:42:32.315230 EDT | AverageAbsQYDiff           31.0796
+2017-06-27 22:42:32.315320 EDT | AverageAction               0.379493
+2017-06-27 22:42:32.315408 EDT | PolicyRegParamNorm         78.7364
+2017-06-27 22:42:32.315495 EDT | QFunRegParamNorm           75.5228
+2017-06-27 22:42:32.315581 EDT | -----------------------  -----------
+2017-06-27 22:42:32.315711 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #43 | Training started
+Warning: No valid output stream.
+Average entropy 0.593408, average std 0.397352
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:45:23.369566 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #43 | Training finished
+2017-06-27 22:45:23.369709 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #43 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:45:23.369808 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #43 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:45:34.342566 EDT | -----------------------  -----------
+2017-06-27 22:45:34.342707 EDT | Epoch                      43
+2017-06-27 22:45:34.342799 EDT | Iteration                  43
+2017-06-27 22:45:34.342890 EDT | AverageReturn               5.26882
+2017-06-27 22:45:34.342976 EDT | StdReturn                   0.512127
+2017-06-27 22:45:34.343061 EDT | MaxReturn                   6.81384
+2017-06-27 22:45:34.343145 EDT | MinReturn                   4.76524
+2017-06-27 22:45:34.343232 EDT | AverageDiscountedReturn     5.18024
+2017-06-27 22:45:34.343316 EDT | AverageQLoss             1822.19
+2017-06-27 22:45:34.343399 EDT | AveragePolicySurr        -128.837
+2017-06-27 22:45:34.343484 EDT | AverageQ                  102.373
+2017-06-27 22:45:34.343568 EDT | AverageAbsQ               103.758
+2017-06-27 22:45:34.343653 EDT | AverageY                  102.42
+2017-06-27 22:45:34.343736 EDT | AverageAbsY               102.668
+2017-06-27 22:45:34.343820 EDT | AverageAbsQYDiff           32.7226
+2017-06-27 22:45:34.343904 EDT | AverageAction               0.422769
+2017-06-27 22:45:34.343988 EDT | PolicyRegParamNorm         79.9624
+2017-06-27 22:45:34.344073 EDT | QFunRegParamNorm           77.3748
+2017-06-27 22:45:34.344156 EDT | -----------------------  -----------
+2017-06-27 22:45:34.344284 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #44 | Training started
+Warning: No valid output stream.
+Average entropy 0.590156, average std 0.397366
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:48:24.009288 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #44 | Training finished
+2017-06-27 22:48:24.009439 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #44 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:48:24.009533 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #44 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:48:35.084123 EDT | -----------------------  -----------
+2017-06-27 22:48:35.084262 EDT | Epoch                      44
+2017-06-27 22:48:35.084351 EDT | Iteration                  44
+2017-06-27 22:48:35.084434 EDT | AverageReturn               5.96178
+2017-06-27 22:48:35.084517 EDT | StdReturn                   0.869829
+2017-06-27 22:48:35.084599 EDT | MaxReturn                   8.14131
+2017-06-27 22:48:35.084680 EDT | MinReturn                   5.04075
+2017-06-27 22:48:35.084761 EDT | AverageDiscountedReturn     5.84386
+2017-06-27 22:48:35.084842 EDT | AverageQLoss             2007.53
+2017-06-27 22:48:35.084923 EDT | AveragePolicySurr        -133.895
+2017-06-27 22:48:35.085004 EDT | AverageQ                  106.546
+2017-06-27 22:48:35.085084 EDT | AverageAbsQ               108.049
+2017-06-27 22:48:35.085164 EDT | AverageY                  106.599
+2017-06-27 22:48:35.085244 EDT | AverageAbsY               106.89
+2017-06-27 22:48:35.085324 EDT | AverageAbsQYDiff           34.3486
+2017-06-27 22:48:35.085404 EDT | AverageAction               0.440741
+2017-06-27 22:48:35.085485 EDT | PolicyRegParamNorm         81.071
+2017-06-27 22:48:35.085570 EDT | QFunRegParamNorm           79.2221
+2017-06-27 22:48:35.085651 EDT | -----------------------  -----------
+2017-06-27 22:48:35.085773 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #45 | Training started
+Warning: No valid output stream.
+Average entropy 0.593440, average std 0.397738
+Path length stats min 3 max 70 mean 22 std 10
+2017-06-27 22:51:24.706584 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #45 | Training finished
+2017-06-27 22:51:24.706738 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #45 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:51:24.706830 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #45 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:51:35.484706 EDT | -----------------------  -----------
+2017-06-27 22:51:35.484846 EDT | Epoch                      45
+2017-06-27 22:51:35.484956 EDT | Iteration                  45
+2017-06-27 22:51:35.485060 EDT | AverageReturn               4.34518
+2017-06-27 22:51:35.485153 EDT | StdReturn                   0.135893
+2017-06-27 22:51:35.485255 EDT | MaxReturn                   4.74969
+2017-06-27 22:51:35.485348 EDT | MinReturn                   3.99688
+2017-06-27 22:51:35.485446 EDT | AverageDiscountedReturn     4.29391
+2017-06-27 22:51:35.485540 EDT | AverageQLoss             2175.83
+2017-06-27 22:51:35.485640 EDT | AveragePolicySurr        -139.21
+2017-06-27 22:51:35.485730 EDT | AverageQ                  111.404
+2017-06-27 22:51:35.485819 EDT | AverageAbsQ               112.932
+2017-06-27 22:51:35.485914 EDT | AverageY                  111.413
+2017-06-27 22:51:35.486005 EDT | AverageAbsY               111.7
+2017-06-27 22:51:35.486104 EDT | AverageAbsQYDiff           35.7182
+2017-06-27 22:51:35.486194 EDT | AverageAction               0.38734
+2017-06-27 22:51:35.486299 EDT | PolicyRegParamNorm         82.0883
+2017-06-27 22:51:35.486391 EDT | QFunRegParamNorm           80.9647
+2017-06-27 22:51:35.486488 EDT | -----------------------  -----------
+2017-06-27 22:51:35.486623 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #46 | Training started
+Warning: No valid output stream.
+Average entropy 0.596834, average std 0.399784
+Path length stats min 2 max 70 mean 21 std 10
+2017-06-27 22:54:25.509796 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #46 | Training finished
+2017-06-27 22:54:25.509949 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #46 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:54:25.510041 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #46 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:54:35.967887 EDT | -----------------------  -----------
+2017-06-27 22:54:35.968024 EDT | Epoch                      46
+2017-06-27 22:54:35.968112 EDT | Iteration                  46
+2017-06-27 22:54:35.968196 EDT | AverageReturn               4.48903
+2017-06-27 22:54:35.968278 EDT | StdReturn                   0.165706
+2017-06-27 22:54:35.968360 EDT | MaxReturn                   4.87237
+2017-06-27 22:54:35.968442 EDT | MinReturn                   4.00617
+2017-06-27 22:54:35.968524 EDT | AverageDiscountedReturn     4.43196
+2017-06-27 22:54:35.968606 EDT | AverageQLoss             2351.13
+2017-06-27 22:54:35.968687 EDT | AveragePolicySurr        -142.552
+2017-06-27 22:54:35.968769 EDT | AverageQ                  114.741
+2017-06-27 22:54:35.968850 EDT | AverageAbsQ               116.397
+2017-06-27 22:54:35.968932 EDT | AverageY                  114.758
+2017-06-27 22:54:35.969013 EDT | AverageAbsY               115.062
+2017-06-27 22:54:35.969095 EDT | AverageAbsQYDiff           37.136
+2017-06-27 22:54:35.969175 EDT | AverageAction               0.416328
+2017-06-27 22:54:35.969257 EDT | PolicyRegParamNorm         83.2044
+2017-06-27 22:54:35.969338 EDT | QFunRegParamNorm           82.6134
+2017-06-27 22:54:35.969419 EDT | -----------------------  -----------
+2017-06-27 22:54:35.969545 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #47 | Training started
+Warning: No valid output stream.
+Average entropy 0.597392, average std 0.399957
+Path length stats min 2 max 70 mean 21 std 10
+2017-06-27 22:57:25.407119 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #47 | Training finished
+2017-06-27 22:57:25.407266 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #47 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 22:57:25.407359 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #47 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 22:57:38.052372 EDT | -----------------------  -----------
+2017-06-27 22:57:38.052521 EDT | Epoch                      47
+2017-06-27 22:57:38.052625 EDT | Iteration                  47
+2017-06-27 22:57:38.052720 EDT | AverageReturn               5.25689
+2017-06-27 22:57:38.052814 EDT | StdReturn                   0.237067
+2017-06-27 22:57:38.052907 EDT | MaxReturn                   5.73595
+2017-06-27 22:57:38.052999 EDT | MinReturn                   4.6195
+2017-06-27 22:57:38.053090 EDT | AverageDiscountedReturn     5.16705
+2017-06-27 22:57:38.053181 EDT | AverageQLoss             2491.99
+2017-06-27 22:57:38.053272 EDT | AveragePolicySurr        -146.341
+2017-06-27 22:57:38.053362 EDT | AverageQ                  118.372
+2017-06-27 22:57:38.053453 EDT | AverageAbsQ               120.125
+2017-06-27 22:57:38.053544 EDT | AverageY                  118.41
+2017-06-27 22:57:38.053635 EDT | AverageAbsY               118.691
+2017-06-27 22:57:38.053724 EDT | AverageAbsQYDiff           38.1639
+2017-06-27 22:57:38.054035 EDT | AverageAction               0.453277
+2017-06-27 22:57:38.054126 EDT | PolicyRegParamNorm         84.2271
+2017-06-27 22:57:38.054213 EDT | QFunRegParamNorm           84.2662
+2017-06-27 22:57:38.054306 EDT | -----------------------  -----------
+2017-06-27 22:57:38.054436 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #48 | Training started
+Warning: No valid output stream.
+Average entropy 0.597172, average std 0.400162
+Path length stats min 2 max 70 mean 21 std 10
+2017-06-27 23:00:28.500294 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #48 | Training finished
+2017-06-27 23:00:28.500448 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #48 | Trained qf 1000 steps, policy 1000 steps
+2017-06-27 23:00:28.500551 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #48 | Collecting samples for evaluation
+Warning: No valid output stream.
+2017-06-27 23:00:40.217960 EDT | -----------------------  -----------
+2017-06-27 23:00:40.218103 EDT | Epoch                      48
+2017-06-27 23:00:40.218194 EDT | Iteration                  48
+2017-06-27 23:00:40.218280 EDT | AverageReturn               4.41035
+2017-06-27 23:00:40.218371 EDT | StdReturn                   0.14183
+2017-06-27 23:00:40.218519 EDT | MaxReturn                   4.75933
+2017-06-27 23:00:40.218599 EDT | MinReturn                   4.08485
+2017-06-27 23:00:40.218680 EDT | AverageDiscountedReturn     4.35195
+2017-06-27 23:00:40.218761 EDT | AverageQLoss             2645.86
+2017-06-27 23:00:40.218843 EDT | AveragePolicySurr        -150.52
+2017-06-27 23:00:40.218924 EDT | AverageQ                  121.326
+2017-06-27 23:00:40.219005 EDT | AverageAbsQ               123.16
+2017-06-27 23:00:40.219085 EDT | AverageY                  121.336
+2017-06-27 23:00:40.219166 EDT | AverageAbsY               121.577
+2017-06-27 23:00:40.219246 EDT | AverageAbsQYDiff           39.361
+2017-06-27 23:00:40.219329 EDT | AverageAction               0.492464
+2017-06-27 23:00:40.219409 EDT | PolicyRegParamNorm         85.3221
+2017-06-27 23:00:40.219489 EDT | QFunRegParamNorm           85.8009
+2017-06-27 23:00:40.219569 EDT | -----------------------  -----------
+2017-06-27 23:00:40.219692 EDT | [BayesianExploration_Hopper-v1_regular_2017_06_27_20_33_18_0001] epoch #49 | Training started
 Warning: No valid output stream.

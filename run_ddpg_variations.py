@@ -3,7 +3,7 @@ from rllab.envs.box2d.cartpole_env import CartpoleEnv
 from rllab.envs.normalized_env import normalize
 from rllab.misc.instrument import stub, run_experiment_lite
 from rllab.exploration_strategies.ou_strategy import OUStrategy
-from sandbox.rocky.tf.policies.deterministic_mlp_policy import DeterministicMLPPolicy
+from exploration_strategies.policy_with_dropout import DeterministicDropoutMLPPolicy
 from sandbox.rocky.tf.q_functions.continuous_mlp_q_function import ContinuousMLPQFunction
 from exploration_strategies.bayesian_strategy import *
 from sandbox.rocky.tf.envs.base import TfEnv
@@ -43,7 +43,7 @@ else:
 
 env = TfEnv(normalize(gymenv))
 
-policy = DeterministicMLPPolicy(
+policy = DeterministicDropoutMLPPolicy(
     env_spec=env.spec,
     name="policy",
     # The neural network policy should have two hidden layers, each with 32 hidden units.

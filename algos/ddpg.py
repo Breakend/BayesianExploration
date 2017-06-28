@@ -171,7 +171,7 @@ class DDPG(RLAlgorithm):
                 train_qf_itr, train_policy_itr = 0, 0
                 for epoch_itr in pyprind.prog_bar(range(self.epoch_length)):
                     if updates_until_next_sampling <= 0:
-                        samples = self.es.generate_samples(self.env, sample_policy, self.epoch_length*2 + 1, self.max_path_length)
+                        samples = self.es.generate_samples(self.env, sample_policy, self.epoch_length + 1, self.max_path_length)
                         updates_until_next_sampling = len(samples)
                     sample = samples[-updates_until_next_sampling]
                     updates_until_next_sampling -= 1
