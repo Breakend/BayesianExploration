@@ -164,42 +164,18 @@ class DDPG(RLAlgorithm):
             with tf.variable_scope("sample_policy"):
                 sample_policy = Serializable.clone(self.policy)
 
+            updates_until_next_sampling = 0
             for epoch in range(self.n_epochs):
                 logger.push_prefix('epoch #%d | ' % epoch)
                 logger.log("Training started")
                 train_qf_itr, train_policy_itr = 0, 0
                 for epoch_itr in pyprind.prog_bar(range(self.epoch_length)):
-                    # Execute policy
-                    if terminal:  # or path_length > self.max_path_length:
-                        # Note that if the last time step ends an episode, the very
-                        # last state and observation will be ignored and not added
-                        # to the replay pool
-                        observation = self.env.reset()
-                        self.es.reset()
-                        sample_policy.reset()
-                        self.es_path_returns.append(path_return)
-                        path_length = 0
-                        path_return = 0
-                        initial = True
-                    else:
-                        initial = False
-
-                    actions = []
-
-                    for i in range(100):
-                        action,_ = sample_policy.get_action_with_dropout(observation)
-                        actions.append(action)
-
-                    tiled_observations = [observation] * len(actions)
-
-                    q_vals = self.qf.get_qval(np.vstack(tiled_observations), np.vstack(actions))
-
-                    action_max = np.argmax(q_vals)
-
-                    next_observation, reward, terminal, _ = self.env.step(actions[action_max])
-                    path_length += 1
-                    path_return += reward
-
+                    if updates_until_next_sampling <= 0:
+                        samples = self.es.generate_samples(self.env, sample_policy, self.epoch_length + 1, self.max_path_length)
+                        updates_until_next_sampling = len(samples)
+                    sample = samples[-updates_until_next_sampling]
+                    updates_until_next_sampling -= 1
+                    observation, action, reward, terminal, initial, path_length = sample
                     if not terminal and path_length >= self.max_path_length:
                         terminal = True
                         # only include the terminal transition in this case if the flag was set
@@ -207,8 +183,6 @@ class DDPG(RLAlgorithm):
                             pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
                     else:
                         pool.add_sample(observation, action, reward * self.scale_reward, terminal, initial)
-
-                    observation = next_observation
 
                     if pool.size >= self.min_pool_size:
                         for update_itr in range(self.n_updates_per_sample):
