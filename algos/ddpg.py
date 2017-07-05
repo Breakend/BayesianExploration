@@ -192,9 +192,13 @@ class DDPG(RLAlgorithm):
 
                     tiled_observations = [observation] * len(actions)
 
-                    q_vals = self.qf.get_qval(np.vstack(tiled_observations), np.vstack(actions))
+                    all_qvals = []
 
-                    action_max = np.argmax(q_vals)
+                    for i in range(100):
+                        q_vals = self.qf.get_qval_dropout(np.vstack(tiled_observations), np.vstack(actions))
+                        all_qvals.append(q_vals)
+
+                    action_max = np.argmax(np.vstack(all_qvals)) % len(actions)
 
                     next_observation, reward, terminal, _ = self.env.step(actions[action_max])
                     path_length += 1
@@ -358,6 +362,7 @@ class DDPG(RLAlgorithm):
             max_samples=self.eval_samples,
             max_path_length=self.max_path_length,
         )
+        self.env.reset()
 
         average_discounted_return = np.mean(
             [special.discount_return(path["rewards"], self.discount) for path in paths]

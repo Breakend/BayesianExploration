@@ -24,7 +24,7 @@ from sandbox.rocky.tf.core.layers_powered import LayersPowered
 
 class DropoutMLP(LayersPowered, Serializable):
     def __init__(self, name, output_dim, hidden_sizes, hidden_nonlinearity,
-                 output_nonlinearity, dropout_prob=.1, hidden_W_init=L.XavierUniformInitializer(), hidden_b_init=tf.zeros_initializer(),
+                 output_nonlinearity, dropout_prob=.05, hidden_W_init=L.XavierUniformInitializer(), hidden_b_init=tf.zeros_initializer(),
                  output_W_init=L.XavierUniformInitializer(), output_b_init=tf.zeros_initializer(),
                  input_var=None, input_layer=None, input_shape=None, batch_normalization=False, weight_normalization=False,
                  ):
